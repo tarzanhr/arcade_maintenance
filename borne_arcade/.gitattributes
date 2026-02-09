@@ -1,0 +1,10 @@
+*.sh text eol=lf
+config/paths.conf text eol=lf
+common.sh text eol=lf
+tools/*.sh text eol=lf
+
+# Python files
+*.py text eol=lf
+
+# Java files
+*.java text eol=lf
