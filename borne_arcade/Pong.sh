@@ -1,4 +1,6 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
+
 xdotool mousemove 1280 1024
-cd projet/Pong
-java -cp .:../..:/home/pi/git/MG2D Main
+cd "$BORNE_ROOT/projet/Pong"
+java -cp ".:../..:$MG2D_PATH" Main

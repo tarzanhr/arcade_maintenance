@@ -1,3 +1,5 @@
 #!/bin/bash
-cd projet/CursedWare
+source "$(dirname "$0")/common.sh"
+
+cd "$BORNE_ROOT/projet/CursedWare"
 love .

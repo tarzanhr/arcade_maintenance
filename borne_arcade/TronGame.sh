@@ -1,2 +1,5 @@
-cd projet/TronGame
-python3.7 main.py
+#!/bin/bash
+source "$(dirname "$0")/common.sh"
+
+cd "$BORNE_ROOT/projet/TronGame"
+"$BORNE_ROOT/tools/python_wrapper.sh" main.py

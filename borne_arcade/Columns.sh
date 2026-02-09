@@ -1,5 +1,7 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
+
 xdotool mousemove 1280 1024
-cd projet/Columns
+cd "$BORNE_ROOT/projet/Columns"
 touch highscore
-java -cp .:../..:/home/pi/git/MG2D Main
+java -cp ".:../..:$MG2D_PATH" Main

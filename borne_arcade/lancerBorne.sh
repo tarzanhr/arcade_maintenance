@@ -1,17 +1,16 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
 
 setxkbmap borne
 
-cd /home/pi/git/borne_arcade
-echo "nettoyage des répertoires"
-echo "Veuillez patienter"
+cd "$BORNE_ROOT"
+echo "Nettoyage..."
 ./clean.sh
 ./compilation.sh
 
-echo "Lancement du  Menu"
-echo "Veuillez patienter"
+echo "Lancement menu..."
 
-java -cp .:/home/pi/git/MG2D Main
+java -cp ".:$MG2D_PATH" Main
 
 ./clean.sh
 

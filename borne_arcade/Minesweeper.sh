@@ -1,5 +1,7 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
+
 xdotool mousemove 1280 1024
-cd projet/Minesweeper
+cd "$BORNE_ROOT/projet/Minesweeper"
 touch highscore
-java -cp .:../..:/home/pi/git/MG2D Minesweeper
+java -cp ".:../..:$MG2D_PATH" Minesweeper

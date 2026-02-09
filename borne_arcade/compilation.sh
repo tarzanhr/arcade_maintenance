@@ -1,19 +1,28 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
+source "$SCRIPT_DIR/tools/detect_environment.sh" --silent
 
-echo "Compilation du menu de la borne d'arcade"
-echo "Veuillez patienter"
-javac -cp .:/home/pi/git/MG2D *.java
+JAVA_VERSION=$(java -version 2>&1 | head -1 | cut -d'"' -f2 | cut -d'.' -f1)
+if [ "$JAVA_VERSION" = "1" ]; then
+    JAVA_VERSION=$(java -version 2>&1 | head -1 | cut -d'"' -f2 | cut -d'.' -f2)
+fi
+
+if [ "$JAVA_VERSION" -ge 17 ] 2>/dev/null; then
+    JAVAC_FLAGS=""
+else
+    JAVAC_FLAGS="-source 8 -target 8"
+fi
+
+echo "Compilation menu (Java $JAVA_VERSION)"
+javac $JAVAC_FLAGS -cp ".:$MG2D_PATH" *.java
 
 cd projet
 
-
-#PENSER A REMETTRE COMPILATION JEUX!!!
 for i in *
 do
     cd $i
-    echo "Compilation du jeu "$i
-    echo "Veuillez patienter"
-    javac -cp .:../..:/home/pi/git/MG2D *.java
+    echo "Compilation jeu $i"
+    javac $JAVAC_FLAGS -cp ".:../..:$MG2D_PATH" *.java 2>/dev/null || true
     cd ..
 done
 
