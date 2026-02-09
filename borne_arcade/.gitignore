@@ -1,0 +1,20 @@
+# Fichiers compilés Java
+*.class
+
+# Fichiers Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporaires
+tmp/
