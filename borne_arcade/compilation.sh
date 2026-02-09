@@ -13,8 +13,11 @@ else
     JAVAC_FLAGS="-source 8 -target 8"
 fi
 
+echo "Compilation MG2D (Java $JAVA_VERSION)"
+cd "$MG2D_PATH" && find . -name "*.java" -exec javac $JAVAC_FLAGS {} + && cd - > /dev/null
+
 echo "Compilation menu (Java $JAVA_VERSION)"
-javac $JAVAC_FLAGS -cp ".:$MG2D_PATH" *.java
+javac $JAVAC_FLAGS -cp ".:$(dirname "$MG2D_PATH")" *.java
 
 cd projet
 
@@ -22,7 +25,7 @@ for i in *
 do
     cd $i
     echo "Compilation jeu $i"
-    javac $JAVAC_FLAGS -cp ".:../..:$MG2D_PATH" *.java 2>/dev/null || true
+    javac $JAVAC_FLAGS -cp ".:../..:$(dirname "$MG2D_PATH")" *.java 2>/dev/null || true
     cd ..
 done
 

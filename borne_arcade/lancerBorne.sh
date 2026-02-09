@@ -10,7 +10,7 @@ echo "Nettoyage..."
 
 echo "Lancement menu..."
 
-java -cp ".:$MG2D_PATH" Main
+java -cp ".:$(dirname "$MG2D_PATH")" Main
 
 ./clean.sh
 
