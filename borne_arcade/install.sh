@@ -16,29 +16,29 @@ if ! grep -q "Raspberry Pi" /proc/cpuinfo 2>/dev/null && [ -z "$FORCE_INSTALL" ]
     fi
 fi
 
-source ./tools/detect_environment.sh
+source ./borne_arcade/tools/detect_environment.sh
 
 echo "[1/7] Installation dépendances..."
-./tools/install_dependencies.sh
+./borne_arcade/tools/install_dependencies.sh
 
 echo "[2/7] Setup MG2D..."
-./tools/setup_mg2d.sh
+./borne_arcade/tools/setup_mg2d.sh
 
 echo "[3/7] Installation layout clavier..."
-./tools/install_keyboard_layout.sh
+./borne_arcade/tools/install_keyboard_layout.sh
 
 echo "[4/7] Compilation..."
 if [ -f ./compilation.sh ]; then
-    ./compilation.sh
+    ./borne_arcade/compilation.sh
 else
     echo "compilation.sh non trouvé, ignoré"
 fi
 
 echo "[5/7] Configuration autostart..."
-./tools/setup_autostart.sh
+./borne_arcade/tools/setup_autostart.sh
 
 echo "[6/7] Configuration système..."
-./tools/configure_system.sh
+./borne_arcade/tools/configure_system.sh
 
 echo "[7/7] Installation git hooks..."
 if [ -d .git ]; then
