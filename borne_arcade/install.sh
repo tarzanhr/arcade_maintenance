@@ -21,8 +21,8 @@ source ./tools/detect_environment.sh
 echo "[1/7] Installation dépendances..."
 ./tools/install_dependencies.sh
 
-echo "[2/7] Setup MG2D..."
-./tools/setup_mg2d.sh
+echo "[2/7] Vérification MG2D..."
+./tools/verify_mg2d.sh
 
 echo "[3/7] Installation layout clavier..."
 ./tools/install_keyboard_layout.sh
