@@ -35,6 +35,12 @@ mkdir -p ../build/classes
 javac -d ../build/classes -encoding UTF-8 $SOURCE_DIR/*.java 2>/dev/null || echo "Pas de fichiers .java à la racine"
 javac -d ../build/classes -encoding UTF-8 $SOURCE_DIR/geometrie/*.java 2>/dev/null || echo "Pas de fichiers dans geometrie/"
 javac -d ../build/classes -encoding UTF-8 $SOURCE_DIR/audio/*.java 2>/dev/null || echo "Pas de fichiers dans audio/"
+javac -d ../build/classes -encoding UTF-8 $SOURCE_DIR/audio/converter/*.java 2>/dev/null || echo "Pas de fichiers dans audio/converter/"
+javac -d ../build/classes -encoding UTF-8 $SOURCE_DIR/audio/decoder/*.java 2>/dev/null || echo "Pas de fichiers dans audio/decoder/"
+
+# Copie des fichiers .ser en préservant la structure
+echo "Copie des fichiers .ser..."
+find $SOURCE_DIR -name "*.ser" -exec cp --parents {} ../build/classes/ \; 2>/dev/null || echo "Pas de fichiers .ser"
 
 # Création JAR
 echo "Création du JAR..."

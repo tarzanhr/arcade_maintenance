@@ -38,15 +38,14 @@
     </target>
 
     <target name="jar" depends="compile" description="Crée le JAR exécutable">
-        <jar destfile="${jar.dir}/MG2D.jar" 
-             basedir="${classes.dir}"
-             includes="**/*.class">
+        <jar destfile="${jar.dir}/MG2D.jar" basedir="${classes.dir}">
+            <include name="**/*.class"/>
+            <include name="**/*.ser"/>
             <manifest>
                 <attribute name="Main-Class" value="${main.class}"/>
-                <attribute name="Implementation-Title" value="MG2D"/>
-                <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
+
         <echo message="JAR créé: ${jar.dir}/MG2D.jar"/>
     </target>
     
