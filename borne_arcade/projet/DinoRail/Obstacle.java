@@ -1,5 +1,4 @@
-import MG2D.geometrie.Point;
-import MG2D.geometrie.Texture;
+import MG2D.geometrie.*;
 
 public class Obstacle extends Texture {
 

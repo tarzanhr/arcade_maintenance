@@ -22,7 +22,11 @@ for i in *
 do
     cd $i
     echo "Compilation jeu $i"
-    javac $JAVAC_FLAGS -cp "$JAVA_CP:../.." *.java 2>/dev/null || true
+    if ls *.java 1> /dev/null 2>&1; then
+        javac $JAVAC_FLAGS -cp "$JAVA_CP:../.." *.java
+    else
+        echo "  Pas de fichiers .java à compiler"
+    fi
     cd ..
 done
 

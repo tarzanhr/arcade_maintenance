@@ -1,9 +1,7 @@
 
 import MG2D.FenetrePleinEcran;
-import MG2D.geometrie.Couleur;
-import MG2D.geometrie.Point;
-import MG2D.geometrie.Rectangle;
-import MG2D.geometrie.Texte;
+import MG2D.geometrie.*;
+import MG2D.Couleur;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Iterator;
