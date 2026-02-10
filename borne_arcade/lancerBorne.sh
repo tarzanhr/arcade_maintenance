@@ -4,15 +4,10 @@ source "$(dirname "$0")/common.sh"
 setxkbmap borne
 
 cd "$BORNE_ROOT"
-echo "Nettoyage..."
-./clean.sh
-./compilation.sh
 
 echo "Lancement menu..."
 
 java -cp "$JAVA_CP" Main
-
-./clean.sh
 
 # Extinction de la borne après l'avoir quitté
 #for i in {30..1}
