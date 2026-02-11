@@ -76,16 +76,70 @@ def install_pip_package(package_name, version_spec):
     package_spec = f"{package_name}{version_spec}"
     print(f"Installation de {package_spec}...")
     try:
-        result = subprocess.run(['pip3', 'install', package_spec], capture_output=True, text=True)
-        if result.returncode == 0:
+        # Show real-time output during installation
+        # Use --only-binary=:all: to force precompiled wheels and avoid compilation
+        process = subprocess.Popen(['pip3', 'install', '--only-binary=:all:', package_spec], 
+                                  stdout=subprocess.PIPE, 
+                                  stderr=subprocess.STDOUT, 
+                                  text=True, 
+                                  universal_newlines=True)
+        
+        for line in iter(process.stdout.readline, ''):
+            if line.strip():
+                print(f"  {line.strip()}")
+        
+        process.wait()
+        
+        if process.returncode == 0:
             print(f"  [OK] {package_name} installe avec succes")
             return True
         else:
-            print(f"  [ERREUR] Echec installation {package_name}: {result.stderr}")
+            print(f"  [ERREUR] Echec installation {package_name}")
             return False
     except Exception as e:
         print(f"  [ERREUR] {e}")
         return False
+
+def check_system_dependencies():
+    """Check and install system dependencies needed for Python packages"""
+    print("\n[DEPENDANCES SYSTEME]")
+    
+    required_packages = {
+        'gfortran': 'sudo apt install gfortran',
+        'python3-dev': 'sudo apt install python3-dev',
+        'build-essential': 'sudo apt install build-essential'
+    }
+    
+    missing_packages = []
+    
+    for package, install_cmd in required_packages.items():
+        try:
+            if package == 'gfortran':
+                # Check with which for executables
+                result = subprocess.run(['which', package], capture_output=True, text=True)
+            else:
+                # Check with dpkg for development packages
+                result = subprocess.run(['dpkg', '-l', package], capture_output=True, text=True)
+            
+            if result.returncode == 0:
+                print(f"  [OK] {package} est installe")
+            else:
+                print(f"  [MANQUANT] {package} non installe")
+                missing_packages.append((package, install_cmd))
+        except:
+            print(f"  [MANQUANT] {package} non installe")
+            missing_packages.append((package, install_cmd))
+    
+    if missing_packages:
+        print("\n=== Installation des dependances systeme manquantes ===")
+        print("Les packages suivants sont necessaires pour compiler scipy et autres packages:")
+        for package, install_cmd in missing_packages:
+            print(f"  {package}: {install_cmd}")
+        print("\nExecutez ces commandes manuellement, puis relancez ce script.")
+        return False
+    else:
+        print("  [OK] Toutes les dependances systeme sont presentes")
+        return True
 
 def main():
     # Load dependencies file
@@ -96,6 +150,11 @@ def main():
         deps = json.load(f)
 
     print("=== Verification des dependances ===\n")
+
+    # Check system dependencies first
+    if not check_system_dependencies():
+        print("\nInstallation des dependances systeme requise avant de continuer.")
+        return
 
     # Check Python
     print("[PYTHON]")
