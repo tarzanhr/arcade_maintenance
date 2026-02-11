@@ -38,8 +38,10 @@ Pour utiliser la bibliothèque MG2D, assurez-vous d'avoir les bons imports :
 ```java
 import MG2D.*;
 import MG2D.geometrie.*;
-import MG2D.Couleur;  // Important : Couleur est dans MG2D, pas MG2D.geometrie
+import MG2D.Couleur;
 ```
+
+> Vous n'avez pas à installer la bibliothèque MG2D, elle est déjà présente dans la borne et utiliser lors de la compilation
 
 ## Structure recommandée
 
@@ -59,3 +61,18 @@ projet/
 - Le nom du dossier doit correspondre exactement au nom du script
 - Les jeux sans fichiers Java seront listés mais ne pourront pas être compilés
 - La borne détecte automatiquement les nouveaux jeux au prochain lancement
+
+## Affichage des boutons
+
+Pour permettre l'affichage des boutons dans la borne, vous devez créer un fichier `boutons.txt` dans le dossier `projet/<nom du jeu>/`.
+
+### Exemple de bouton à ajouter
+
+```txt
+Mouvement DinoRail:aucun:aucun:Quitter:aucun:aucun:aucun:
+```
+> le texte entre les deux-points est le texte affiché sur le bouton et peut donc être n'importe quoi
+
+## Pour les jeux en python
+
+Pour les jeux en python, vous devez créer un fichier `requirements.txt` dans le dossier `projet/<nom du jeu>/`.
