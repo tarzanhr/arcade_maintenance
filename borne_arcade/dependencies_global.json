@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-11T10:58:10.341234",
+    "project": "borne_arcade",
+    "total_games": 14
+  },
+  "system_packages": {
+    "debian_apt": [
+      "git",
+      "xdotool",
+      "xkb-data",
+      "unclutter",
+      "curl",
+      "wget",
+      "love"
+    ]
+  },
+  "languages": {
+    "java": {
+      "versions_required": [
+        "8",
+        "17",
+        "21"
+      ],
+      "min_version": "8",
+      "recommended_version": "17",
+      "max_version": "21",
+      "classpath": [
+        "MG2D.jar"
+      ],
+      "install_method": "openjdk-17-jdk or openjdk-8-jdk"
+    },
+    "python": {
+      "versions_required": [
+        "3.5"
+      ],
+      "min_version": "3.5",
+      "max_version": "3.5",
+      "packages": {
+        "pygame": {
+          "versions": [
+            {
+              "operator": ">=",
+              "version": "2.5.0",
+              "game": "OsuTile"
+            },
+            {
+              "operator": ">=",
+              "version": "2.5.0",
+              "game": "PianoTile"
+            },
+            {
+              "operator": ">=",
+              "version": "2.5.0",
+              "game": "TronGame"
+            },
+            {
+              "operator": "==",
+              "version": "2.6.1",
+              "game": "ball-blast"
+            }
+          ],
+          "min_version": "2.5.0",
+          "max_version": "2.6.1",
+          "used_by": [
+            "OsuTile",
+            "PianoTile",
+            "TronGame",
+            "ball-blast"
+          ]
+        },
+        "librosa": {
+          "versions": [
+            {
+              "operator": ">=",
+              "version": "0.9.0",
+              "game": "PianoTile"
+            }
+          ],
+          "min_version": "0.9.0",
+          "max_version": "0.9.0",
+          "used_by": [
+            "PianoTile"
+          ]
+        },
+        "numpy": {
+          "versions": [
+            {
+              "operator": ">=",
+              "version": "1.20.0",
+              "game": "TronGame"
+            }
+          ],
+          "min_version": "1.20.0",
+          "max_version": "1.20.0",
+          "used_by": [
+            "TronGame"
+          ]
+        },
+        "scipy": {
+          "versions": [
+            {
+              "operator": ">=",
+              "version": "1.5.0",
+              "game": "TronGame"
+            }
+          ],
+          "min_version": "1.5.0",
+          "max_version": "1.5.0",
+          "used_by": [
+            "TronGame"
+          ]
+        }
+      },
+      "install_method": "python3 python3-pip"
+    },
+    "lua": {
+      "versions_required": [
+        "5.1"
+      ],
+      "love_version": "11.0+",
+      "install_method": "love"
+    }
+  },
+  "games": {
+    "Columns": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "CursedWare": {
+      "type": "lua",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": null,
+      "lua_version": "5.1",
+      "has_requirements": false
+    },
+    "DinoRail": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "InitialDrift": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "JavaSpace": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "Kowasu_Renga": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "Minesweeper": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "OsuTile": {
+      "type": "python",
+      "dependencies": {
+        "pygame": {
+          "operator": ">=",
+          "version": "2.5.0"
+        }
+      },
+      "python_version": "3.5+",
+      "java_version": null,
+      "lua_version": null,
+      "has_requirements": true
+    },
+    "PianoTile": {
+      "type": "python",
+      "dependencies": {
+        "pygame": {
+          "operator": ">=",
+          "version": "2.5.0"
+        },
+        "librosa": {
+          "operator": ">=",
+          "version": "0.9.0"
+        }
+      },
+      "python_version": "3.5+",
+      "java_version": null,
+      "lua_version": null,
+      "has_requirements": true
+    },
+    "Pong": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "Puissance_X": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "Snake_Eater": {
+      "type": "java",
+      "dependencies": {},
+      "python_version": null,
+      "java_version": "8+",
+      "lua_version": null,
+      "has_requirements": false
+    },
+    "TronGame": {
+      "type": "python",
+      "dependencies": {
+        "pygame": {
+          "operator": ">=",
+          "version": "2.5.0"
+        },
+        "numpy": {
+          "operator": ">=",
+          "version": "1.20.0"
+        },
+        "scipy": {
+          "operator": ">=",
+          "version": "1.5.0"
+        }
+      },
+      "python_version": "3.5+",
+      "java_version": null,
+      "lua_version": null,
+      "has_requirements": true
+    },
+    "ball-blast": {
+      "type": "python",
+      "dependencies": {
+        "pygame": {
+          "operator": "==",
+          "version": "2.6.1"
+        }
+      },
+      "python_version": "3.5+",
+      "java_version": null,
+      "lua_version": null,
+      "has_requirements": true
+    }
+  }
+}
