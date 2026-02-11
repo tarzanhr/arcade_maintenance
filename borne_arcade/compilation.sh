@@ -31,3 +31,9 @@ do
 done
 
 cd ..
+
+./scripts/liste_jeux.sh > noms_jeux.txt
+
+# Donner les permissions d'exécution aux scripts de lancement
+echo -e "\nDonner les permissions d'exécution aux scripts de lancement..."
+./scripts/set_executable.sh

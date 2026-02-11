@@ -1,0 +1,14 @@
+ball-blast
+Columns
+CursedWare
+DinoRail
+InitialDrift
+JavaSpace
+Kowasu_Renga
+Minesweeper
+OsuTile
+PianoTile
+Pong
+Puissance_X
+Snake_Eater
+TronGame

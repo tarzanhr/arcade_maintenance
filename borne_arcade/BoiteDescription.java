@@ -206,7 +206,7 @@ public class BoiteDescription extends Boite{
 	    String ligne;
 	    ligne = br.readLine();
 	    if(ligne == null){
-		System.err.println("le fichier bouton est surement vide!");
+		System.err.println("le fichier bouton est surement vide :" + fichier);
 	    }else{
 		texteBouton = ligne.split(":");
 		//changer le texte des boutons
