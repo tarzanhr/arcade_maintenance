@@ -11,7 +11,7 @@ echo "Lancement menu..."
 
 ./compilation.sh
 
-java -cp "$JAVA_CP" Main
+java -cp "bin:$JAVA_CP" Main
 
 # Extinction de la borne après l'avoir quitté
 #for i in {30..1}

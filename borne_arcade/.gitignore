@@ -18,3 +18,4 @@ __pycache__/
 
 # Temporaires
 tmp/
+bin/

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rf *.class *~ projet/*/*.class projet/*/*~
+rm -rf bin/* *~ projet/*/*.class projet/*/*~

@@ -191,7 +191,7 @@ def analyze_dependencies(borne_root):
 
 def main():
     borne_root = os.environ.get('BORNE_ROOT', '/home/thr/git/borne_arcade')
-    output_file = Path(borne_root) / 'dependencies_global.json'
+    output_file = Path(borne_root) / 'data' / 'dependencies_global.json'
 
     print("=== ANALYSE DES DÉPENDANCES ===\n")
     data = analyze_dependencies(borne_root)

@@ -14,7 +14,8 @@ else
 fi
 
 echo "Compilation menu (Java $JAVA_VERSION)"
-javac $JAVAC_FLAGS -cp "$JAVA_CP" *.java
+mkdir -p bin
+javac $JAVAC_FLAGS -d bin -cp "$JAVA_CP" src/*.java src/javazoom/jl/*/*.java
 
 cd projet
 
@@ -32,7 +33,7 @@ done
 
 cd ..
 
-./scripts/liste_jeux.sh > noms_jeux.txt
+./scripts/liste_jeux.sh > data/noms_jeux.txt
 
 # Donner les permissions d'exécution aux scripts de lancement
 echo -e "\nDonner les permissions d'exécution aux scripts de lancement..."
