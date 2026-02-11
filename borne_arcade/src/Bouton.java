@@ -45,7 +45,7 @@ public class Bouton {
 	    int i = Graphique.tableau.length - 1;
 	    for (Path path : directoryStream) {
 		Graphique.tableau[i].setTexte(new Texte(Couleur .NOIR, path.getFileName().toString(), new Font("Calibri", Font.TYPE1_FONT, 30), new Point(310, 510)));
-		Graphique.tableau[i].setTexture(new Texture("img/bouton2.png", new Point(100, 478), 400, 65));
+		Graphique.tableau[i].setTexture(new Texture("../assets/img/bouton2.png", new Point(100, 478), 400, 65));
 		for(int j=0;j<Graphique.tableau.length-(i+1);j++){
 		    Graphique.tableau[i].getTexte().translater(0,-110);
 		    Graphique.tableau[i].getTexture().translater(0,-110);

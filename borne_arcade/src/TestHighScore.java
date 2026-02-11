@@ -8,7 +8,7 @@ class TestHighScore{
 	ClavierBorneArcade clavier = new ClavierBorneArcade();
 	f.addKeyListener(clavier);
 
-	HighScore.demanderEnregistrerNom(f,clavier,new Texture("img/shoot.png",new Point(0,0)),40000,"./fichierTestHighScore/text5.hig");
+	HighScore.demanderEnregistrerNom(f,clavier,new Texture("../assets/img/shoot.png",new Point(0,0)),40000,"./fichierTestHighScore/text5.hig");
     }
     
 }

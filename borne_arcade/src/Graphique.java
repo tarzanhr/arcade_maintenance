@@ -40,7 +40,7 @@ public class Graphique {
 
 	font = null;
 	try{
-	    File in = new File("fonts/PrStart.ttf");
+	    File in = new File("../assets/fonts/PrStart.ttf");
 	    font = font.createFont(Font.TRUETYPE_FONT, in);
 	    font = font.deriveFont(32.0f);
 	}catch (Exception e) {
@@ -82,7 +82,7 @@ public class Graphique {
 	bd.lireHighScore(tableau[pointeur.getValue()].getChemin());
 	//f.ajouter(bd.getRectangle());
 
-	Texture fond = new Texture("img/fondretro3.png", new Point(0, 0), TAILLEX, TAILLEY);
+	Texture fond = new Texture("../assets/img/fondretro3.png", new Point(0, 0), TAILLEX, TAILLEY);
 	f.ajouter(fond);
 	//ajout apres fond car bug graphique sinon
 	f.ajouter(bi.getImage());
@@ -121,7 +121,7 @@ public class Graphique {
 	
 	/*Musique de fond*/
 	//Comptage du nombre de musiques disponibles
-	Path cheminMusiques = FileSystems.getDefault().getPath("sound/bg/");
+	Path cheminMusiques = FileSystems.getDefault().getPath("../assets/sound/bg/");
 	cptMus=0;
 	try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(cheminMusiques)) {
 	    for (Path path : directoryStream) {
@@ -146,7 +146,7 @@ public class Graphique {
     }
 
     public void selectionJeu(){	
-		Texture fondBlancTransparent = new Texture("./img/blancTransparent.png", new Point(0,0));
+		Texture fondBlancTransparent = new Texture("../assets/img/blancTransparent.png", new Point(0,0));
 		Rectangle boutonNon = new Rectangle(Couleur.ROUGE, new Point(340, 600), 200, 100, true);
 		Rectangle boutonOui = new Rectangle(Couleur.VERT, new Point(740, 600), 200, 100, true);
 		Texte message = new Texte(Couleur.NOIR, "Voulez vous vraiment quitter ?", font, new Point(640, 800));
@@ -190,7 +190,7 @@ public class Graphique {
 
 				fontSelect = null;
 				try{
-				File in = new File("fonts/PrStart.ttf");
+				File in = new File("../assets/fonts/PrStart.ttf");
 				fontSelect = fontSelect.createFont(Font.TRUETYPE_FONT, in);
 				fontSelect = fontSelect.deriveFont(48.0f);
 				}catch (Exception e) {
@@ -269,7 +269,7 @@ public class Graphique {
     }
     
     public static void lectureMusiqueFond() {
-    	musiqueFond = new Bruitage ("sound/bg/"+tableauMusiques[(int)(Math.random()*cptMus)]);
+    	musiqueFond = new Bruitage ("../assets/sound/bg/"+tableauMusiques[(int)(Math.random()*cptMus)]);
     	musiqueFond.lecture();
     }
 	

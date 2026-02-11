@@ -22,10 +22,10 @@ public class BoiteSelection extends Boite{
     }
 
     public boolean selection(ClavierBorneArcade clavier){
-	Bruitage selection = new Bruitage("sound/bip.mp3");
+	Bruitage selection = new Bruitage("../assets/sound/bip.mp3");
 	font = null;
 	try{
-	    File in = new File("fonts/PrStart.ttf");
+	    File in = new File("../assets/fonts/PrStart.ttf");
 	    font = font.createFont(Font.TRUETYPE_FONT, in);
 	    font = font.deriveFont(26.0f);
 	}catch (Exception e) {

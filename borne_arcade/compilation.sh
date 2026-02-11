@@ -15,7 +15,7 @@ fi
 
 echo "Compilation menu (Java $JAVA_VERSION)"
 mkdir -p bin
-javac $JAVAC_FLAGS -d bin -cp "$JAVA_CP" src/*.java src/javazoom/jl/*/*.java
+javac $JAVAC_FLAGS -d bin -cp "$JAVA_CP" src/*.java
 
 cd projet
 
@@ -24,7 +24,7 @@ do
     cd $i
     echo "Compilation jeu $i"
     if ls *.java 1> /dev/null 2>&1; then
-        javac $JAVAC_FLAGS -cp "$JAVA_CP:../.." *.java
+        javac $JAVAC_FLAGS -cp "$JAVA_CP:../../bin:../.." *.java
     else
         echo "  Pas de fichiers .java à compiler"
     fi

@@ -63,7 +63,7 @@ class HighScore{
 	Font font;
 	font = null;
 	try{
-	    File in = new File("/home/pi/git/borne_arcade/fonts/PrStart.ttf");
+	    File in = new File("/home/pi/git/borne_arcade/assets/fonts/PrStart.ttf");
 	    font = font.createFont(Font.TRUETYPE_FONT, in);
 	    font = font.deriveFont(40.0f);
 	}catch (Exception e) {
@@ -103,7 +103,7 @@ class HighScore{
 	
 	Triangle select = new Triangle(Couleur.NOIR, new Point(690,340), new Point(670,300), new Point(710,300),true);
 
-	Texture blancTrans = new Texture("img/blancTransparent.png",new Point(0,0));
+	Texture blancTrans = new Texture("../assets/img/blancTransparent.png",new Point(0,0));
 
 	if(t!=null)
 	    f.ajouter(t);
