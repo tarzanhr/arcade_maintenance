@@ -103,7 +103,7 @@ class HighScore{
 	
 	Triangle select = new Triangle(Couleur.NOIR, new Point(690,340), new Point(670,300), new Point(710,300),true);
 
-	Texture blancTrans = new Texture("../assets/img/blancTransparent.png",new Point(0,0));
+	Texture blancTrans = new Texture("assets/img/blancTransparent.png",new Point(0,0));
 
 	if(t!=null)
 	    f.ajouter(t);

@@ -43,9 +43,9 @@ public class BoiteDescription extends Boite{
 	    
 	    Font font = null;
 		Font fontTexte = null;
-		File in = new File("../assets/fonts/PrStart.ttf");
+		File in = new File("assets/fonts/PrStart.ttf");
 		font = font.createFont(Font.TRUETYPE_FONT, in);
-		 in = new File("../assets/fonts/Volter__28Goldfish_29.ttf");
+		 in = new File("assets/fonts/Volter__28Goldfish_29.ttf");
 		fontTexte = fontTexte.createFont(Font.TRUETYPE_FONT, in);
 	    font1 = fontTexte.deriveFont(15.0f);
 		font2 = fontTexte.deriveFont(20.0f);
@@ -61,12 +61,12 @@ public class BoiteDescription extends Boite{
 	texteBouton = new String[7];
 		
 	//declaration des texture bouton + joystick
-	this.joystick = new Texture("../assets/img/joystick2.png", new Point(740, 100), 40,40);
+	this.joystick = new Texture("assets/img/joystick2.png", new Point(740, 100), 40,40);
 	for(int i = 0 ; i < 3 ; i++){
-	    this.bouton[i] = new Texture("../assets/img/ibouton2.png", new Point(890+130*i, 130), 40, 40);
+	    this.bouton[i] = new Texture("assets/img/ibouton2.png", new Point(890+130*i, 130), 40, 40);
 	}
 	for(int i = 3 ; i < 6 ; i++){
-	    this.bouton[i] = new Texture("../assets/img/ibouton2.png", new Point(890+130*(i-3), 50), 40, 40);
+	    this.bouton[i] = new Texture("assets/img/ibouton2.png", new Point(890+130*(i-3), 50), 40, 40);
 	}
 	
 	//declaration des textes bouton + joystick
