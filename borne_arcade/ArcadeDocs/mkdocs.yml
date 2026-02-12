@@ -1,0 +1,25 @@
+site_name: IUT Arcade
+nav:
+  - "Accueil": index.md
+  - "Code Source":
+    - "BoiteDescription": src/BoiteDescription.md
+    - "BoiteImage": src/BoiteImage.md
+    - "BoiteSelection": src/BoiteSelection.md
+    - "Bouton": src/Bouton.md
+    - "ClavierBorneArcade": src/ClavierBorneArcade.md
+    - "Graphique": src/Graphique.md
+    - "Main": src/Main.md
+    - "Pointeur": src/Pointeur.md
+
+theme:
+  name: mkdocs
+  language: fr
+
+plugins:
+  - search
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - toc:
+      permalink: true
