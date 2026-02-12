@@ -14,6 +14,10 @@ import java.awt.event.KeyListener;
  * Pour chacune des directions des joysticks ou des boutons, deux méthodes seront présentes : une méthode pour savoir si la direction ou le bouton est pressé ou une autre méthode pour savoir s'il a été pressé.
  *
  * Elle fonctionne sur le principe de booléen que l'on change quand on appuie ou relâche les touches.
+ * 
+ * @author IUT de Calais
+ * @version 1.0
+ * @since 1.0
  */
 public class ClavierBorneArcade implements KeyListener {
 

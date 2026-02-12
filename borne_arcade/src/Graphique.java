@@ -12,26 +12,61 @@ import MG2D.audio.*;
 import MG2D.*;
 import MG2D.FenetrePleinEcran;
 
+/**
+ * Classe principale de l'interface graphique de la borne d'arcade.
+ * <p>
+ * Cette classe gère l'affichage complet du menu principal, y compris
+ * la sélection des jeux, l'affichage des descriptions, des high scores,
+ * et la gestion des entrées utilisateur. Elle coordonne tous les éléments
+ * visuels et audio de l'interface.
+ * </p>
+ * 
+ * @author IUT de Calais
+ * @version 1.0
+ * @since 1.0
+ */
 public class Graphique {
 
-    //private final Fenetre f;
+    /** Fenêtre principale de l'application en plein écran */
     private static final FenetrePleinEcran f = new FenetrePleinEcran("_Menu Borne D'arcade_");
+    /** Largeur de l'écran */
     private int TAILLEX;
+    /** Hauteur de l'écran */
     private int TAILLEY;
+    /** Gestionnaire des entrées de la borne d'arcade */
     private ClavierBorneArcade clavier;
+    /** Boîte de sélection pour naviguer dans le menu */
     private BoiteSelection bs;
     private BoiteImage bi;
     private BoiteDescription bd;
+    /** Tableau statique des boutons de jeux */
     public static Bouton[] tableau;
+    /** Pointeur visuel de sélection */
     private Pointeur pointeur;
     Font font;
     Font fontSelect;
+    /** Tableau indiquant quels textes sont affichés */
 	public static boolean[] textesAffiches;
+    /** Musique de fond jouée dans le menu */
 	public static Bruitage musiqueFond;
+    /** Tableau des musiques disponibles pour le menu */
 	private static String[] tableauMusiques;
+    /** Compteur pour la rotation des musiques */
 	private static int cptMus;
 
 
+    /**
+     * Constructeur de la classe Graphique.
+     * <p>
+     * Initialise tous les composants de l'interface graphique :
+     * - Définit les dimensions de l'écran (1280x1024)
+     * - Charge les polices personnalisées
+     * - Crée les boîtes d'interface
+     * - Initialise le tableau de boutons avec les jeux disponibles
+     * - Configure le pointeur de sélection
+     * - Démarre la musique de fond
+     * </p>
+     */
     public Graphique(){
     	
 
@@ -145,6 +180,17 @@ public class Graphique {
 	this.lectureMusiqueFond();
     }
 
+    /**
+     * Boucle principale de sélection des jeux.
+     * <p>
+     * Gère l'interaction utilisateur dans le menu principal :
+     * - Navigation avec le joystick (haut/bas)
+     * - Sélection avec le bouton Z
+     * - Lancement du jeu avec le bouton A
+     * - Menu de confirmation pour quitter
+     * - Mise à jour dynamique des descriptions et high scores
+     * </p>
+     */
     public void selectionJeu(){	
 		Texture fondBlancTransparent = new Texture("assets/img/blancTransparent.png", new Point(0,0));
 		Rectangle boutonNon = new Rectangle(Couleur.ROUGE, new Point(340, 600), 200, 100, true);
@@ -268,15 +314,37 @@ public class Graphique {
 		}//fin while true
     }
     
+    /**
+     * Démarre la lecture d'une musique de fond aléatoire.
+     * <p>
+     * Choisit une musique au hasard dans le tableau des musiques disponibles
+     * et la lance en boucle.
+     * </p>
+     */
     public static void lectureMusiqueFond() {
     	musiqueFond = new Bruitage ("assets/sound/bg/"+tableauMusiques[(int)(Math.random()*cptMus)]);
     	musiqueFond.lecture();
     }
-	
+    
+    /**
+     * Arrête la musique de fond.
+     * <p>
+     * Stoppe la lecture en cours de la musique de fond.
+     * </p>
+     */
 	public static void stopMusiqueFond(){
 		musiqueFond.arret();
 	}
-	
+    
+    /**
+     * Affiche le texte d'un jeu spécifique.
+     * <p>
+     * Ajoute le texte du bouton de jeu à la fenêtre principale.
+     * Utilisé pour afficher dynamiquement les textes lors de la navigation.
+     * </p>
+     * 
+     * @param valeur L'index du jeu dont on veut afficher le texte
+     */
 	public static void afficherTexte(int valeur){
 		f.ajouter(tableau[valeur].getTexte());
 	}

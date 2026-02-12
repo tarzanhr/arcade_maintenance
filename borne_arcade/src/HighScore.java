@@ -8,8 +8,31 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * Classe utilitaire pour la gestion des high scores.
+ * <p>
+ * Cette classe fournit des méthodes statiques pour :
+ * - La navigation dans les caractères pour la saisie de noms
+ * - La lecture et l'écriture des high scores dans les fichiers
+ * - L'interface de saisie de nom après une partie
+ * </p>
+ * 
+ * @author IUT de Calais
+ * @version 1.0
+ * @since 1.0
+ */
 class HighScore{
 
+    /**
+     * Retourne le caractère suivant dans la séquence de saisie.
+     * <p>
+     * Gère la rotation des caractères autorisés pour la saisie de nom :
+     * A→B→C→...→Z→.→espace→A
+     * </p>
+     * 
+     * @param c Le caractère actuel
+     * @return Le caractère suivant dans la séquence
+     */
     public static char suivant(char c){
 	if(c>='A' && c<'Z')
 	    return (char)(c+1);
@@ -20,6 +43,16 @@ class HighScore{
 	return 'A';
     }
 
+    /**
+     * Retourne le caractère précédent dans la séquence de saisie.
+     * <p>
+     * Gère la rotation inverse des caractères autorisés :
+     * A→espace→.→Z→Y→...→A
+     * </p>
+     * 
+     * @param c Le caractère actuel
+     * @return Le caractère précédent dans la séquence
+     */
     public static char precedent(char c){
 	if(c>'A' && c<='Z')
 	    return (char)(c-1);
@@ -30,6 +63,22 @@ class HighScore{
 	return 'Z';
     }
 
+    /**
+     * Lance l'interface de saisie de nom pour enregistrer un high score.
+     * <p>
+     * Cette méthode gère l'interface complète de saisie de nom :
+     * - Détermine la position du score dans le classement
+     * - Affiche l'interface de saisie avec navigation
+     * - Permet de saisir un nom de 3 caractères maximum
+     * - Sauvegarde le nouveau high score dans le fichier
+     * </p>
+     * 
+     * @param f La fenêtre où afficher l'interface
+     * @param clavier Le clavier pour la saisie
+     * @param t La texture de fond pour l'interface
+     * @param s Le score à enregistrer
+     * @param fichierHighScore Le chemin du fichier de high scores
+     */
     public static void demanderEnregistrerNom(Fenetre f, ClavierBorneArcade clavier, Texture t, int s, String fichierHighScore){
 
 	ArrayList<LigneHighScore> list = lireFichier(fichierHighScore);
@@ -199,6 +248,17 @@ class HighScore{
 	System.exit(0);
     }
 
+    /**
+     * Lit le fichier des high scores et le charge en mémoire.
+     * <p>
+     * Ouvre le fichier spécifié et lit chaque ligne pour créer
+     * des objets LigneHighScore. Chaque ligne doit être au format
+     * "nom-score". Gère silencieusement les erreurs de lecture.
+     * </p>
+     * 
+     * @param fichier Le chemin du fichier de high scores à lire
+     * @return Une ArrayList contenant tous les high scores lus
+     */
     public static ArrayList<LigneHighScore> lireFichier(String fichier){
 	ArrayList<LigneHighScore> l = new ArrayList<LigneHighScore>();
 
@@ -214,6 +274,19 @@ class HighScore{
 	return l;
     }
 
+    /**
+     * Enregistre un nouveau high score dans le fichier.
+     * <p>
+     * Insère le nouveau score à la bonne position dans le classement,
+     * maintient un maximum de 10 scores, et sauvegarde le tout
+     * dans le fichier spécifié. Le fichier est écrasé avec la nouvelle liste.
+     * </p>
+     * 
+     * @param fichier Le chemin du fichier où sauvegarder
+     * @param list La liste actuelle des high scores
+     * @param nom Le nom du joueur (3 caractères maximum)
+     * @param score Le nouveau score à enregistrer
+     */
     public static void enregistrerFichier(String fichier, ArrayList<LigneHighScore> list, String nom, int score){
 	int position=0;
 	boolean fin = false;

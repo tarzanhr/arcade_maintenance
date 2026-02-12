@@ -8,8 +8,31 @@ import MG2D.geometrie.*;
 /***************************************************************************************/
 
 
+/**
+ * Classe de test pour le clavier de la borne d'arcade.
+ * <p>
+ * Cette classe permet de tester visuellement toutes les entrées de la borne d'arcade.
+ * Elle affiche des cercles qui changent de couleur lorsque les boutons
+ * ou joysticks sont pressés. Utile pour vérifier le bon fonctionnement
+ * des contrôles.
+ * </p>
+ * 
+ * @author IUT de Calais
+ * @version 1.0
+ * @since 1.0
+ */
 class TestClavierBorneArcade{
 
+    /**
+     * Point d'entrée du programme de test.
+     * <p>
+     * Crée une fenêtre de test avec des représentations visuelles
+     * pour tous les contrôles de la borne d'arcade (2 joueurs).
+     * Les cercles changent de couleur lorsque les boutons sont pressés.
+     * </p>
+     * 
+     * @param args Arguments de ligne de commande (non utilisés)
+     */
     public static void main(String[] args){
 	Fenetre f = new Fenetre("Test du clavier pour la borne d'arcade",1000,260);
 	ClavierBorneArcade clavier = new ClavierBorneArcade();

@@ -11,35 +11,59 @@ import java.io.File;
 import MG2D.geometrie.Texte;
 import MG2D.Couleur;
 
-
+/**
+ * Classe représentant une boîte de sélection dans l'interface graphique.
+ * <p>
+ * Cette classe gère la navigation dans le menu de sélection des jeux
+ * en utilisant le joystick et les boutons de la borne d'arcade.
+ * Elle permet de naviguer verticalement dans la liste des jeux.
+ * </p>
+ * 
+ * @author IUT de Calais
+ * @version 1.0
+ * @since 1.0
+ */
 public class BoiteSelection extends Boite{
     Pointeur pointeur;
     Font font;
 
+    /**
+     * Constructeur de la classe BoiteSelection.
+     * 
+     * @param rectangle Le rectangle définissant la position et la taille de la boîte
+     * @param pointeur Le pointeur utilisé pour la navigation
+     */
     public BoiteSelection(Rectangle rectangle, Pointeur pointeur) {
 	super(rectangle);
 	this.pointeur = pointeur;
     }
 
+    /**
+     * Gère la sélection et la navigation dans le menu.
+     * <p>
+     * Cette méthode gère les entrées du clavier de la borne d'arcade pour
+     * naviguer dans la liste des jeux. Elle utilise le joystick pour monter/descendre
+     * et le bouton Z pour valider la sélection. La navigation est circulaire.
+     * </p>
+     * 
+     * @param clavier Le clavier de la borne d'arcade
+     * @return true si la navigation continue, false si un jeu est sélectionné
+     */
     public boolean selection(ClavierBorneArcade clavier){
-	Bruitage selection = new Bruitage("assets/sound/bip.mp3");
+	// Chargement de la police personnalisée
 	font = null;
 	try{
 	    File in = new File("assets/fonts/PrStart.ttf");
 	    font = font.createFont(Font.TRUETYPE_FONT, in);
 	    font = font.deriveFont(26.0f);
 	}catch (Exception e) {
-	    System.out.println(e.getMessage());
+	    System.out.println("Erreur lors du chargement de la police: " + e.getMessage());
 	}
 	
-	//Modifier le 07/11/2019 pour améliorer la navigation
-	/*
-	*	BACK:
-	*	repasse au premier élément du tableau lorsque la valeur du pointeur est égale à la 	*	taille du tableau-1
-	*
-	*	FRONT:
-	*	descend au dernier jeux de la liste afficher sur le menu  
-	*/
+	// Bruitage pour la navigation
+	Bruitage selection = new Bruitage("assets/sound/bip.mp3");
+	
+	// Navigation vers le haut (joystick haut)
 	if(clavier.getJoyJ1HautTape() &&( pointeur.getValue() <= Graphique.tableau.length - 1)){
 		if(Graphique.textesAffiches[pointeur.getValue()]==false){
 			Graphique.afficherTexte(pointeur.getValue());
@@ -66,14 +90,7 @@ public class BoiteSelection extends Boite{
 			pointeur.setValue(pointeur.getValue() + 1);
 		}	
 	}
-	//Modifier le 07/11/2019 pour améliorer la navigation
-	/*
-	*	BACK:
-	*	repasse au dernier élément du tableau lorsque la valeur du pointeur est égale à 0
-	*
-	*	FRONT:
-	*	Remonte au premier jeux de la liste afficher sur le menu 
-	*/
+	// Navigation vers le bas (joystick bas)
 	if(clavier.getJoyJ1BasTape() && pointeur.getValue() >= 0){
 		if(Graphique.textesAffiches[pointeur.getValue()]==false){
 			Graphique.afficherTexte(pointeur.getValue());
@@ -104,18 +121,27 @@ public class BoiteSelection extends Boite{
 			System.out.println(pointeur.getValue());		
 		}
 	}
-	
-
+		// Validation de la sélection (bouton Z)
 	if(clavier.getBoutonJ1ZTape()){
 	    return false;
 	}
 	return true;
     }
 
+    /**
+     * Retourne le pointeur de navigation.
+     * 
+     * @return Le pointeur actuel
+     */
     public Pointeur getPointeur() {
 	return pointeur;
     }
 
+    /**
+     * Définit le pointeur de navigation.
+     * 
+     * @param pointeur Le nouveau pointeur à utiliser
+     */
     public void setPointeur(Pointeur pointeur) {
 	this.pointeur = pointeur;
     }
