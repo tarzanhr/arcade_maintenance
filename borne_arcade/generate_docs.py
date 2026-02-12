@@ -106,15 +106,14 @@ class JavaDocGenerator:
         """Génère la page d'index de la documentation."""
         doc = "# Documentation du projet Borne Arcade\n\n"
         doc += "Bienvenue dans la documentation du projet Borne Arcade de l'IUT de Calais.\n\n"
-        doc += "## Structure des classes\n\n"
-        doc += "La documentation du code source est organisée dans la section **[Code Source](src/)** :\n\n"
-        
-        for class_info in self.classes_info:
-            doc += f"- [{class_info['name']}](src/{class_info['name']}.md) - {class_info['file']}\n"
-        
-        doc += "\n## Génération\n\n"
-        doc += "Cette documentation a été générée automatiquement à partir des commentaires Javadoc "
-        doc += "présents dans les fichiers source Java.\n"
+        doc += "## Guide rapide\n\n"
+        doc += "- **[Utilisation](utilisation.md)** : Comment utiliser la borne arcade\n"
+        doc += "- **[Code Source](src.md)** : Architecture et documentation des classes\n"
+        doc += "- **[Développement](#développement)** : Ajouter des jeux et développer\n\n"
+        doc += "## Développement\n\n"
+        doc += "- **[Ajouter un jeu](ajout_jeu.md)** : Guide pour intégrer de nouveaux jeux\n\n"
+        doc += "## Documentation des classes\n\n"
+        doc += "La documentation détaillée des classes Java est accessible depuis la page **[Code Source](src.md)**.\n"
         
         return doc
     
@@ -128,10 +127,16 @@ class JavaDocGenerator:
         config_content = f"""site_name: IUT Arcade
 nav:
   - "Accueil": index.md
-  - "Code Source":"""
+  - "Utilisation": utilisation.md
+  - "Code Source": 
+    - "Vue d'ensemble": src.md"""
         
         for class_info in sorted(self.classes_info, key=lambda x: x['name']):
             config_content += f"\n    - \"{class_info['name']}\": src/{class_info['name']}.md"
+        
+        config_content += """
+  - "Développement":
+    - "Ajouter un jeu": ajout_jeu.md"""
         
         config_content += "\n\ntheme:\n  name: mkdocs\n  language: fr\n\nplugins:\n  - search\n\nmarkdown_extensions:\n  - codehilite\n  - admonition\n  - toc:\n      permalink: true"
         

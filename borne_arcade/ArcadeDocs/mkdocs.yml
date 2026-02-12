@@ -2,7 +2,9 @@ site_name: IUT Arcade
 site_url: https://TarzanHR.github.io/arcade_maintenance
 nav:
   - "Accueil": index.md
-  - "Code Source":
+  - "Utilisation": utilisation.md
+  - "Code Source": 
+    - "Vue d'ensemble": src.md
     - "BoiteDescription": src/BoiteDescription.md
     - "BoiteImage": src/BoiteImage.md
     - "BoiteSelection": src/BoiteSelection.md
@@ -11,6 +13,8 @@ nav:
     - "Graphique": src/Graphique.md
     - "Main": src/Main.md
     - "Pointeur": src/Pointeur.md
+  - "Développement":
+    - "Ajouter un jeu": ajout_jeu.md
 
 theme:
   name: mkdocs
