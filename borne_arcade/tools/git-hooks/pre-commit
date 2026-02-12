@@ -1,0 +1,71 @@
+#!/bin/bash
+# Hook pre-commit pour verifier la documentation avant de commiter
+
+# Recuperer la liste des fichiers modifies (Java et Python seulement)
+JAVA_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.java$')
+PYTHON_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$')
+
+DOC_MISSING=0
+
+# Fonction pour verifier qu'une fonction Java a un Javadoc
+check_java_doc() {
+    local file=$1
+    # Chercher les methodes publiques sans javadoc (/** */) juste avant
+    if grep -Pzo '(?<!/\*\*)\n\s*public\s+(static\s+)?[\w<>]+\s+\w+\s*\(' "$file" > /dev/null 2>&1; then
+        echo "ATTENTION: $file contient des methodes publiques sans Javadoc"
+        return 1
+    fi
+    return 0
+}
+
+# Fonction pour verifier qu'une fonction Python a une docstring
+check_python_doc() {
+    local file=$1
+    # Chercher des def sans """ juste apres
+    if grep -Pzo 'def\s+\w+\([^)]*\):\s*\n\s*(?!""")' "$file" > /dev/null 2>&1; then
+        echo "ATTENTION: $file contient des fonctions sans docstring"
+        return 1
+    fi
+    return 0
+}
+
+# Verifier les fichiers Java
+if [ -n "$JAVA_FILES" ]; then
+    echo "Verification documentation Java..."
+    for file in $JAVA_FILES; do
+        if [ -f "$file" ]; then
+            if ! check_java_doc "$file"; then
+                DOC_MISSING=1
+            fi
+        fi
+    done
+fi
+
+# Verifier les fichiers Python
+if [ -n "$PYTHON_FILES" ]; then
+    echo "Verification documentation Python..."
+    for file in $PYTHON_FILES; do
+        if [ -f "$file" ]; then
+            if ! check_python_doc "$file"; then
+                DOC_MISSING=1
+            fi
+        fi
+    done
+fi
+
+# Si de la doc manque, demander confirmation
+if [ $DOC_MISSING -eq 1 ]; then
+    echo ""
+    echo "=========================================="
+    echo "ATTENTION: Documentation potentiellement manquante"
+    echo "=========================================="
+    echo ""
+    echo "Voulez-vous quand meme continuer le commit? (o/N)"
+    read -r response
+    if [[ ! "$response" =~ ^[OoYy]$ ]]; then
+        echo "Commit annule. Ajoutez la documentation et recommencez."
+        exit 1
+    fi
+fi
+
+exit 0
