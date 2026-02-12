@@ -43,6 +43,10 @@ ArcadeDocs/
 ├── mkdocs.yml              # Configuration MkDocs générée
 └── docs/
     ├── index.md           # Page d'accueil
+    ├── utilisation.md     # Guide d'utilisation de la borne
+    ├── ajout_jeu.md       # Guide pour ajouter des jeux
+    ├── mg2d.md           # Guide d'importation MG2D
+    ├── scripts.md        # Documentation des scripts
     └── src/               # Documentation du code source
         ├── Main.md        # Documentation de Main
         ├── Graphique.md   # Documentation de Graphique

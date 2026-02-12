@@ -2,19 +2,16 @@
 
 Bienvenue dans la documentation du projet Borne Arcade de l'IUT de Calais.
 
-## Structure des classes
+## Guide rapide
 
-La documentation du code source est organisée dans la section **[Code Source](src/)** :
+- **[Utilisation](utilisation.md)** : Comment utiliser la borne arcade
+- **[Code Source](src.md)** : Architecture et documentation des classes
+- **[Développement](#développement)** : Ajouter des jeux et développer
 
-- [BoiteImage](src/BoiteImage.md) - BoiteImage.java
-- [BoiteDescription](src/BoiteDescription.md) - BoiteDescription.java
-- [Pointeur](src/Pointeur.md) - Pointeur.java
-- [Bouton](src/Bouton.md) - Bouton.java
-- [ClavierBorneArcade](src/ClavierBorneArcade.md) - ClavierBorneArcade.java
-- [Graphique](src/Graphique.md) - Graphique.java
-- [BoiteSelection](src/BoiteSelection.md) - BoiteSelection.java
-- [Main](src/Main.md) - Main.java
+## Développement
 
-## Génération
+- **[Ajouter un jeu](ajout_jeu.md)** : Guide pour intégrer de nouveaux jeux
 
-Cette documentation a été générée automatiquement à partir des commentaires Javadoc présents dans les fichiers source Java.
+## Documentation des classes
+
+La documentation détaillée des classes Java est accessible depuis la page **[Code Source](src.md)**.
