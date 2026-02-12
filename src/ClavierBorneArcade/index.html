@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://TarzanHR.github.io/arcade_maintenance/src/ClavierBorneArcade/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ClavierBorneArcade - IUT Arcade</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">IUT Arcade</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Code Source</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../BoiteDescription/" class="dropdown-item">BoiteDescription</a>
+</li>
+                                    
+<li>
+    <a href="../BoiteImage/" class="dropdown-item">BoiteImage</a>
+</li>
+                                    
+<li>
+    <a href="../BoiteSelection/" class="dropdown-item">BoiteSelection</a>
+</li>
+                                    
+<li>
+    <a href="../Bouton/" class="dropdown-item">Bouton</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">ClavierBorneArcade</a>
+</li>
+                                    
+<li>
+    <a href="../Graphique/" class="dropdown-item">Graphique</a>
+</li>
+                                    
+<li>
+    <a href="../Main/" class="dropdown-item">Main</a>
+</li>
+                                    
+<li>
+    <a href="../Pointeur/" class="dropdown-item">Pointeur</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Bouton/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Graphique/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#clavierbornearcade" class="nav-link">ClavierBorneArcade</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#methodes" class="nav-link">Méthodes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="clavierbornearcade">ClavierBorneArcade<a class="headerlink" href="#clavierbornearcade" title="Permanent link">&para;</a></h1>
+<p><strong>Fichier source:</strong> <code>ClavierBorneArcade.java</code></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Cette classe implémente les méthodes de KeyListener permettant la gestion du clavier.  Elle permet de gérer le clavier dans des applications développées pour la borne d'arcade de l'IUT.  Les joysticks sont nommés joyJ1 et joyJ2. joyJ1Haut la touche envoyée lorsque le joystick 1 est poussé vers le haut, joyJ1Bas, joyJ1Gauche, joyJ1Droite lorsqu'il est poussé, respectivement, vers le bas, la gauche et la droite.  Les boutons sont nommés boutonJ1 et boutonJ2. Il y a 6 boutons possibles pour chaque joueur. Ils sont notés A, B et C pour les boutons du bas et X, Y et Z pour les boutons du haut. Ils sont donc notés boutonJ1A, boutonJ1B, boutonJ1C, boutonJ1X, boutonJ1Y et boutonJ1Z.  Pour chacune des directions des joysticks ou des boutons, deux méthodes seront présentes : une méthode pour savoir si la direction ou le bouton est pressé ou une autre méthode pour savoir s'il a été pressé.  Elle fonctionne sur le principe de booléen que l'on change quand on appuie ou relâche les touches.  @author IUT de Calais @version 1.0 @since 1.0</p>
+<h2 id="methodes">Méthodes<a class="headerlink" href="#methodes" title="Permanent link">&para;</a></h2>
+<h3 id="getjoyj1gaucheenfoncee"><code>getJoyJ1GaucheEnfoncee()</code><a class="headerlink" href="#getjoyj1gaucheenfoncee" title="Permanent link">&para;</a></h3>
+<p>Cette classe implémente les méthodes de KeyListener permettant la gestion du clavier.  Elle permet de gérer le clavier dans des applications développées pour la borne d'arcade de l'IUT.  Les joysticks sont nommés joyJ1 et joyJ2. joyJ1Haut la touche envoyée lorsque le joystick 1 est poussé vers le haut, joyJ1Bas, joyJ1Gauche, joyJ1Droite lorsqu'il est poussé, respectivement, vers le bas, la gauche et la droite.  Les boutons sont nommés boutonJ1 et boutonJ2. Il y a 6 boutons possibles pour chaque joueur. Ils sont notés A, B et C pour les boutons du bas et X, Y et Z pour les boutons du haut. Ils sont donc notés boutonJ1A, boutonJ1B, boutonJ1C, boutonJ1X, boutonJ1Y et boutonJ1Z.  Pour chacune des directions des joysticks ou des boutons, deux méthodes seront présentes : une méthode pour savoir si la direction ou le bouton est pressé ou une autre méthode pour savoir s'il a été pressé.  Elle fonctionne sur le principe de booléen que l'on change quand on appuie ou relâche les touches.  @author IUT de Calais @version 1.0 @since 1.0 /
+public class ClavierBorneArcade implements KeyListener {
+// Attributs //
+private boolean gauche;
+private boolean gaucheTape;
+private boolean droite;
+private boolean droiteTape;
+private boolean haut;
+private boolean hautTape;
+private boolean bas;
+private boolean basTape;
+private boolean a;
+private boolean aTape;
+private boolean z;
+private boolean zTape;
+private boolean e;
+private boolean eTape;
+private boolean q;
+private boolean qTape;
+private boolean s;
+private boolean sTape;
+private boolean d;
+private boolean dTape;
+private boolean b;
+private boolean bTape;
+private boolean k;
+private boolean kTape;
+private boolean l;
+private boolean lTape;
+private boolean m;
+private boolean mTape;
+private boolean o;
+private boolean oTape;
+private boolean f;
+private boolean fTape;
+private boolean g;
+private boolean gTape;
+private boolean h;
+private boolean hTape;
+private boolean r;
+private boolean rTape;
+private boolean t;
+private boolean tTape;
+private boolean y;
+private boolean yTape;
+// Constructeur //
+/   Crée un clavier et initialise tous les attributs à faux pour touches relâchés. /
+public ClavierBorneArcade () {
+gauche = gaucheTape = droite = droiteTape = false;
+haut = hautTape = bas = basTape = false;
+a = d = e = k = l = m = o = q = s = z = false;
+aTape = dTape = eTape = kTape = lTape = mTape = oTape = qTape = sTape = zTape = false;
+f = g = h = r = t = y = false;
+fTape = gTape = hTape = rTape = tTape = yTape = false;
+}
+// Accesseurs //
+// Getter //
+/   Permet de savoir si la touche "flèche gauche" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "flèche gauche" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj1gauchetape"><code>getJoyJ1GaucheTape()</code><a class="headerlink" href="#getjoyj1gauchetape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche gauche" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "flèche gauche tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj1droiteenfoncee"><code>getJoyJ1DroiteEnfoncee()</code><a class="headerlink" href="#getjoyj1droiteenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche droite" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "flèche droite" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj1droitetape"><code>getJoyJ1DroiteTape()</code><a class="headerlink" href="#getjoyj1droitetape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche droite" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "flèche droite tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj1hautenfoncee"><code>getJoyJ1HautEnfoncee()</code><a class="headerlink" href="#getjoyj1hautenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche haut" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "flèche haut" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj1hauttape"><code>getJoyJ1HautTape()</code><a class="headerlink" href="#getjoyj1hauttape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche haut" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "flèche haut tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj1basenfoncee"><code>getJoyJ1BasEnfoncee()</code><a class="headerlink" href="#getjoyj1basenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche bas" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "flèche bas" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj1bastape"><code>getJoyJ1BasTape()</code><a class="headerlink" href="#getjoyj1bastape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "flèche bas" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "flèche bas tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2xenfoncee"><code>getBoutonJ2XEnfoncee()</code><a class="headerlink" href="#getboutonj2xenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "a" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "a" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2xtape"><code>getBoutonJ2XTape()</code><a class="headerlink" href="#getboutonj2xtape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "a" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "a tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2yenfoncee"><code>getBoutonJ2YEnfoncee()</code><a class="headerlink" href="#getboutonj2yenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "z" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "z" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2ytape"><code>getBoutonJ2YTape()</code><a class="headerlink" href="#getboutonj2ytape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "z" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "z tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2zenfoncee"><code>getBoutonJ2ZEnfoncee()</code><a class="headerlink" href="#getboutonj2zenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "e" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "e" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2ztape"><code>getBoutonJ2ZTape()</code><a class="headerlink" href="#getboutonj2ztape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "e" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "e tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2aenfoncee"><code>getBoutonJ2AEnfoncee()</code><a class="headerlink" href="#getboutonj2aenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "q" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "q" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2atape"><code>getBoutonJ2ATape()</code><a class="headerlink" href="#getboutonj2atape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "q" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "q tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2benfoncee"><code>getBoutonJ2BEnfoncee()</code><a class="headerlink" href="#getboutonj2benfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "s" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "s" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2btape"><code>getBoutonJ2BTape()</code><a class="headerlink" href="#getboutonj2btape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "s" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "s tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj2cenfoncee"><code>getBoutonJ2CEnfoncee()</code><a class="headerlink" href="#getboutonj2cenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "d" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "d" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj2ctape"><code>getBoutonJ2CTape()</code><a class="headerlink" href="#getboutonj2ctape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "d" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "d tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj2gaucheenfoncee"><code>getJoyJ2GaucheEnfoncee()</code><a class="headerlink" href="#getjoyj2gaucheenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "k" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "k" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj2gauchetape"><code>getJoyJ2GaucheTape()</code><a class="headerlink" href="#getjoyj2gauchetape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "k" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "k tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj2basenfoncee"><code>getJoyJ2BasEnfoncee()</code><a class="headerlink" href="#getjoyj2basenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "l" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "l" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj2bastape"><code>getJoyJ2BasTape()</code><a class="headerlink" href="#getjoyj2bastape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "l" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "l tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj2droitetape"><code>getJoyJ2DroiteTape()</code><a class="headerlink" href="#getjoyj2droitetape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "m" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "m tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getjoyj2droiteenfoncee"><code>getJoyJ2DroiteEnfoncee()</code><a class="headerlink" href="#getjoyj2droiteenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "m" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "m" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj2hautenfoncee"><code>getJoyJ2HautEnfoncee()</code><a class="headerlink" href="#getjoyj2hautenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "o" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "o" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getjoyj2hauttape"><code>getJoyJ2HautTape()</code><a class="headerlink" href="#getjoyj2hauttape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "o" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "o tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1atape"><code>getBoutonJ1ATape()</code><a class="headerlink" href="#getboutonj1atape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "f" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "f tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1aenfoncee"><code>getBoutonJ1AEnfoncee()</code><a class="headerlink" href="#getboutonj1aenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "f" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "f" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj1btape"><code>getBoutonJ1BTape()</code><a class="headerlink" href="#getboutonj1btape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "g" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "g tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1benfoncee"><code>getBoutonJ1BEnfoncee()</code><a class="headerlink" href="#getboutonj1benfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "g" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "g" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj1ctape"><code>getBoutonJ1CTape()</code><a class="headerlink" href="#getboutonj1ctape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "h" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "h tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1cenfoncee"><code>getBoutonJ1CEnfoncee()</code><a class="headerlink" href="#getboutonj1cenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "h" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "h" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj1xtape"><code>getBoutonJ1XTape()</code><a class="headerlink" href="#getboutonj1xtape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "r" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "r tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1xenfoncee"><code>getBoutonJ1XEnfoncee()</code><a class="headerlink" href="#getboutonj1xenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "r" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "r" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj1ytape"><code>getBoutonJ1YTape()</code><a class="headerlink" href="#getboutonj1ytape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "t" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "t tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1yenfoncee"><code>getBoutonJ1YEnfoncee()</code><a class="headerlink" href="#getboutonj1yenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "t" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "t" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="getboutonj1ztape"><code>getBoutonJ1ZTape()</code><a class="headerlink" href="#getboutonj1ztape" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "y" a été appuyée puis relâchée. @return retourne la valeur du booléen correspondant à la touche "y tapée" : vrai pour tapée, faux sinon.</p>
+<h3 id="getboutonj1zenfoncee"><code>getBoutonJ1ZEnfoncee()</code><a class="headerlink" href="#getboutonj1zenfoncee" title="Permanent link">&para;</a></h3>
+<p>Permet de savoir si la touche "y" est enfoncée ou non. @return retourne la valeur du booléen correspondant à la touche "y" : vrai pour enfoncée, faux sinon.</p>
+<h3 id="reinitialisation"><code>reinitialisation()</code><a class="headerlink" href="#reinitialisation" title="Permanent link">&para;</a></h3>
+<p>Méthode permettant la reinitialisation du clavier. Reinitialisation de tous les événements.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
