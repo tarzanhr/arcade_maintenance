@@ -1,5 +1,5 @@
 site_name: IUT Arcade
-site_url: https://TarzanHR.github.io/arcade_maintenance
+site_url: https://TarzanHR.github.io/arcade_maintenance/
 nav:
   - "Accueil": index.md
   - "Utilisation": utilisation.md
