@@ -135,4 +135,6 @@ jobs:
       - name: Build and deploy MkDocs
         run: |
           cd ArcadeDocs
+          # S'assurer que .nojekyll existe pour désactiver Jekyll
+          echo "" > .nojekyll
           mkdocs gh-deploy --force
