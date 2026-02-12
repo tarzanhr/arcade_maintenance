@@ -48,6 +48,37 @@ def analyze_dependencies(borne_root):
         "games": {}
     }
 
+    # Analyser le requirements.txt racine pour les outils de développement
+    root_req_file = Path(borne_root) / "requirements.txt"
+    if root_req_file.exists():
+        print("Analyse: requirements.txt racine")
+        with open(root_req_file, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    match = re.match(r'([a-zA-Z0-9_-]+)(>=|==|~=|<=|>|<)(.+)', line)
+                    if match:
+                        pkg_name, operator, version = match.groups()
+                        version = version.strip()
+
+                        if pkg_name not in data["languages"]["python"]["packages"]:
+                            data["languages"]["python"]["packages"][pkg_name] = {
+                                "versions": [],
+                                "min_version": None,
+                                "max_version": None,
+                                "used_by": []
+                            }
+
+                        pkg_data = data["languages"]["python"]["packages"][pkg_name]
+                        pkg_data["versions"].append({
+                            "operator": operator,
+                            "version": version,
+                            "game": "dev-tools"
+                        })
+                        if "dev-tools" not in pkg_data["used_by"]:
+                            pkg_data["used_by"].append("dev-tools")
+                        print(f"  OK {pkg_name} {operator} {version}")
+
     projet_dir = Path(borne_root) / "projet"
 
     for game_dir in sorted(projet_dir.iterdir()):

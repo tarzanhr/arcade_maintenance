@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-02-11T10:58:10.341234",
+    "generated_at": "2026-02-12T09:01:49.170424",
     "project": "borne_arcade",
     "total_games": 14
   },
@@ -37,6 +37,20 @@
       "min_version": "3.5",
       "max_version": "3.5",
       "packages": {
+        "mkdocs": {
+          "versions": [
+            {
+              "operator": ">=",
+              "version": "1.5.0",
+              "game": "dev-tools"
+            }
+          ],
+          "min_version": "1.5.0",
+          "max_version": "1.5.0",
+          "used_by": [
+            "dev-tools"
+          ]
+        },
         "pygame": {
           "versions": [
             {

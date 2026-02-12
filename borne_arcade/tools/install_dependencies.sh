@@ -49,14 +49,17 @@ if ! command -v pip3 &> /dev/null; then
     sudo apt-get install -y -qq "$PYTHON_PIP"
 fi
 
-echo "Installation des dépendances Python des jeux..."
-for req_file in "$BORNE_ROOT/projet"/*/requirements.txt; do
-    if [ -f "$req_file" ]; then
-        game_name=$(basename "$(dirname "$req_file")")
-        echo "  $game_name..."
-        pip3 install -q -r "$req_file" --user 2>/dev/null || true
-    fi
-done
+echo "Installation des dépendances Python..."
+if [ -f "$BORNE_ROOT/scripts/check_and_install_deps.py" ]; then
+    python3 "$BORNE_ROOT/scripts/check_and_install_deps.py"
+else
+    for req_file in "$BORNE_ROOT"/requirements.txt "$BORNE_ROOT/projet"/*/requirements.txt; do
+        if [ -f "$req_file" ]; then
+            echo "  Installation depuis $(basename $(dirname $req_file))..."
+            pip3 install -q -r "$req_file" --user 2>/dev/null || true
+        fi
+    done
+fi
 
 source "$SCRIPT_DIR/detect_environment.sh" --silent
 echo ""
