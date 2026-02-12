@@ -125,6 +125,7 @@ class JavaDocGenerator:
             nav.append(f"src/{class_info['name']}.md")
         
         config_content = f"""site_name: IUT Arcade
+site_url: https://TarzanHR.github.io/arcade_maintenance/
 nav:
   - "Accueil": index.md
   - "Utilisation": utilisation.md
