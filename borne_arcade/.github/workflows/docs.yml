@@ -113,7 +113,11 @@ jobs:
     needs: [doc-check, doc-generate]  # Attendre que tout soit ok
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     permissions:
-      contents: write  # Permission pour push sur gh-pages
+      pages: write       # Permission pour deployer sur GitHub Pages
+      id-token: write    # Requis par actions/deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -131,10 +135,19 @@ jobs:
         run: |
           python3 generate_docs.py
 
-      # Deployer sur la branche gh-pages
-      - name: Build and deploy MkDocs
+      # Construire le site mkdocs
+      - name: Build MkDocs
         run: |
           cd ArcadeDocs
-          # S'assurer que .nojekyll existe pour désactiver Jekyll
-          echo "" > .nojekyll
-          mkdocs gh-deploy --force
+          mkdocs build
+
+      # Uploader le site comme artefact GitHub Pages (mode Actions)
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ArcadeDocs/site/
+
+      # Deployer l'artefact sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
