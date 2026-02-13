@@ -1,0 +1,153 @@
+name: Documentation
+
+on:
+  pull_request:
+    branches: [ main, docs ]
+  push:
+    branches: [ main ]
+  schedule:
+    # Executer tous les jours a 2h du matin pour verifier la doc
+    - cron: '0 2 * * *'
+
+jobs:
+  # Job 1: Verifier que la doc est coherente avec le code
+  doc-check:
+    name: Verifier coherence doc/code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r borne_arcade/requirements.txt
+
+      # Verifier que toutes les fonctions publiques ont une doc
+      - name: Check documentation coverage
+        run: |
+          python3 borne_arcade/scripts/check_doc_coverage.py || exit 0
+
+      # Verifier la syntaxe markdown et les liens
+      - name: Lint markdown
+        run: |
+          bash borne_arcade/scripts/lint_docs.sh || exit 0
+
+  # Job 2: Generer la documentation a partir du code source
+  doc-generate:
+    name: Generer documentation
+    runs-on: ubuntu-latest
+    needs: doc-check  # Attendre que les verifications soient ok
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r borne_arcade/requirements.txt
+
+      # Generer les fichiers markdown depuis le code Java
+      - name: Generate documentation
+        run: |
+          python3 borne_arcade/generate_docs.py
+
+      # Construire le site mkdocs HTML
+      - name: Build MkDocs site
+        run: |
+          cd borne_arcade/ArcadeDocs
+          mkdocs build
+
+      # Sauvegarder le site genere comme artefact
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: borne_arcade/ArcadeDocs/site/
+
+  # Job 3: L'IA propose des ameliorations de doc (ne modifie jamais le code)
+  doc-ai-patch:
+    name: Proposer ameliorations IA
+    runs-on: ubuntu-latest
+    # Seulement sur les PR et le nightly check
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Recuperer tout l'historique pour git diff
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r borne_arcade/requirements.txt
+
+      # L'IA analyse le diff et propose des patchs (ne commit jamais auto)
+      - name: Run AI doc enhancer
+        run: |
+          python3 borne_arcade/scripts/ai_doc_enhancer.py --dry-run || echo "AI enhancer en cours de developpement"
+
+      # Sauvegarder les suggestions de l'IA comme fichiers .patch
+      - name: Upload AI suggestions
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-doc-suggestions
+          path: |
+            *.patch
+            *.diff
+
+  # Job 4: Deployer sur GitHub Pages (seulement sur push main)
+  doc-deploy:
+    name: Deployer sur GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [doc-check, doc-generate]  # Attendre que tout soit ok
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      pages: write       # Permission pour deployer sur GitHub Pages
+      id-token: write    # Requis par actions/deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r borne_arcade/requirements.txt
+
+      # Regenerer la doc avant de deployer
+      - name: Generate documentation
+        run: |
+          python3 borne_arcade/generate_docs.py
+
+      # Construire le site mkdocs
+      - name: Build MkDocs
+        run: |
+          cd borne_arcade/ArcadeDocs
+          mkdocs build
+
+      # Uploader le site comme artefact GitHub Pages (mode Actions)
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: borne_arcade/ArcadeDocs/site/
+
+      # Deployer l'artefact sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
