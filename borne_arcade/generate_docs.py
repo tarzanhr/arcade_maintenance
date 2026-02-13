@@ -189,12 +189,13 @@ nav:
 
 def main():
     """Point d'entrée principal."""
-    # Chemins par défaut
-    src_dir = "/home/pi/git/borne_arcade/src"
-    docs_dir = "/home/pi/git/borne_arcade/ArcadeDocs/docs"
-    mkdocs_config = "/home/pi/git/borne_arcade/ArcadeDocs/mkdocs.yml"
-    
-    generator = JavaDocGenerator(src_dir, docs_dir, mkdocs_config)
+    # Chemins relatifs au script
+    script_dir = Path(__file__).parent
+    src_dir = script_dir / "src"
+    docs_dir = script_dir / "ArcadeDocs" / "docs"
+    mkdocs_config = script_dir / "ArcadeDocs" / "mkdocs.yml"
+
+    generator = JavaDocGenerator(str(src_dir), str(docs_dir), str(mkdocs_config))
     generator.generate_documentation()
 
 if __name__ == "__main__":
