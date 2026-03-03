@@ -140,7 +140,7 @@ def main():
     checker = DocCoverageChecker(project_root)
 
     # Seuil de couverture minimum: 80%
-    exit_code = checker.run(min_coverage=100.0)
+    exit_code = checker.run(min_coverage=80.0)
     sys.exit(exit_code)
 
 if __name__ == '__main__':
