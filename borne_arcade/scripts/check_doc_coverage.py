@@ -86,7 +86,7 @@ class DocCoverageChecker:
 
         return missing
 
-    def run(self, min_coverage: float = 80.0) -> int:
+    def run(self, min_coverage: float = 100.0) -> int:
         """Execute la verification de couverture."""
         print("=== Verification de la couverture documentation ===\n")
 
