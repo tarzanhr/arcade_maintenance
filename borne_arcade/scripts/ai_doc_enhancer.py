@@ -8,10 +8,12 @@ IMPORTANT: Ce script propose uniquement, il ne modifie JAMAIS automatiquement.
 import argparse
 import subprocess
 import sys
+import os
 from pathlib import Path
 from datetime import datetime
 
-sys.path.insert(0, '/home/thr/git')
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, BASE_DIR)
 from ollama_wrapper import OllamaWrapper
 
 
