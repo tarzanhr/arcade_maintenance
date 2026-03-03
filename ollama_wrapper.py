@@ -89,10 +89,10 @@ class OllamaWrapper:
 
     # Constructeur : on fixe l'hôte/timeout et on prépare des valeurs par défaut.
     def __init__(
-        self,
-        base_url: str = "http://10.22.28.190:11434",
-        timeout_s: float = 60.0,
-    ) -> None:
+    self,
+    base_url: str = "http://10.22.28.190:11434",
+    timeout_s: float = 180.0,
+) -> None:
         self._base_url: str = base_url.rstrip("/")  # Normalise : pas de "/" final
         self._timeout_s: float = timeout_s  # Timeout réseau pour les requêtes HTTP
 

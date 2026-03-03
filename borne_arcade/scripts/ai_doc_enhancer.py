@@ -9,6 +9,7 @@ import argparse
 import subprocess
 import sys
 import os
+import glob
 from pathlib import Path
 from datetime import datetime
 
@@ -61,14 +62,32 @@ Format de reponse:
     return result.response.strip()
 
 
+def cleanup_old_logs(logs_dir, keep_count=10):
+    """Garde seulement les keep_count derniers fichiers de log."""
+    log_files = sorted(glob.glob(str(logs_dir / "ai_doc_suggestions_*.txt")), 
+                     key=os.path.getmtime, reverse=True)
+    
+    # Supprimer les vieux logs au-delà de keep_count
+    for old_log in log_files[keep_count:]:
+        try:
+            os.remove(old_log)
+            print(f"  Supprimé: {Path(old_log).name}")
+        except OSError as e:
+            print(f"  Erreur suppression {old_log}: {e}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Ameliorateur IA de documentation")
     parser.add_argument('--dry-run', action='store_true', default=True, help='Mode dry-run (par defaut)')
-    parser.add_argument('--model', default='llama3.2', help='Modele Ollama')
+    parser.add_argument('--model', default='gemma2:latest', help='Modele Ollama')
     args = parser.parse_args()
 
     project_root = Path(__file__).parent.parent
-
+    logs_dir = project_root / "logs"
+    
+    # Créer le dossier logs s'il n'existe pas
+    logs_dir.mkdir(exist_ok=True)
+    
     print("=== Ameliorateur IA de documentation ===\n")
 
     # Recuperer le diff
@@ -89,14 +108,19 @@ def main():
         print("Aucune suggestion generee")
         return 1
 
-    # Sauvegarder les suggestions
+    # Sauvegarder les suggestions dans le dossier logs
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = project_root / f"ai_doc_suggestions_{timestamp}.txt"
+    output_file = logs_dir / f"ai_doc_suggestions_{timestamp}.txt"
     output_file.write_text(suggestions, encoding='utf-8')
 
-    print("\n=== Resultat ===")
-    print(f"Suggestions generees: {output_file.name}")
-    print("\nSuggestions:")
+    print(f"\n=== Resultat ===")
+    print(f"Suggestions generees: logs/{output_file.name}")
+    
+    # Nettoyer les vieux logs (garder seulement les 10 derniers)
+    print("\n[Nettoyage des vieux logs]...")
+    cleanup_old_logs(logs_dir, keep_count=10)
+    
+    print(f"\nSuggestions:")
     print(suggestions)
 
     return 0

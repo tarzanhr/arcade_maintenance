@@ -15,6 +15,9 @@ nav:
     - "Pointeur": src/Pointeur.md
   - "Développement":
     - "Ajouter un jeu": ajout_jeu.md
+    - "Columns": jeux/columns.md
+    - "Pong": jeux/pong.md
+    - "Analyse IA des jeux": analyse_jeux.md
 
 theme:
   name: mkdocs
