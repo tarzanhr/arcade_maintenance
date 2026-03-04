@@ -4,6 +4,9 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+echo "[0/2] Initializing submodules..."
+git -C "$SCRIPT_DIR" submodule update --init --recursive
+
 echo "[1/2] Creating MG2D.jar..."
 if [ ! -f "$SCRIPT_DIR/MG2D.jar" ]; then
     bash "$SCRIPT_DIR/create_mg2d_jar.sh"
