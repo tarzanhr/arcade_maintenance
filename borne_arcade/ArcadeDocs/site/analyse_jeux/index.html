@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://TarzanHR.github.io/arcade_maintenance/utilisation/">
+        <link rel="canonical" href="https://TarzanHR.github.io/arcade_maintenance/analyse_jeux/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Utilisation - IUT Arcade</title>
+        <title>Analyse IA des jeux - IUT Arcade</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                                 <a href=".." class="nav-link">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Utilisation</a>
+                                <a href="../utilisation/" class="nav-link">Utilisation</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Code Source</a>
@@ -82,7 +82,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Développement</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Développement</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -90,7 +90,7 @@
 </li>
                                     
 <li>
-    <a href="../analyse_jeux/" class="dropdown-item">Analyse IA des jeux</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Analyse IA des jeux</a>
 </li>
                                 </ul>
                             </li>
@@ -164,12 +164,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../ajout_jeu/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../src/" class="nav-link">
+                                <a rel="next" href="../jeux/presentation_ball-blast/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -191,25 +191,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#guide-dutilisation-de-la-borne-arcade" class="nav-link">Guide d'utilisation de la Borne Arcade</a>
+            <li class="nav-item" data-bs-level="1"><a href="#analyse-de-jeux" class="nav-link">Analyse de Jeux</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#demarrage-de-la-borne" class="nav-link">Démarrage de la borne</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#processus-de-demarrage-detaille" class="nav-link">Processus de démarrage détaillé</a>
+            <li class="nav-item" data-bs-level="2"><a href="#scripts-disponibles" class="nav-link">Scripts disponibles</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#arret-de-la-borne" class="nav-link">Arrêt de la borne</a>
+            <li class="nav-item" data-bs-level="2"><a href="#configuration-requise" class="nav-link">Configuration requise</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#interface-utilisateur" class="nav-link">Interface utilisateur</a>
+            <li class="nav-item" data-bs-level="2"><a href="#structure-des-fichiers-generes" class="nav-link">Structure des fichiers générés</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#scripts-utilitaires" class="nav-link">Scripts utilitaires</a>
+            <li class="nav-item" data-bs-level="2"><a href="#exemples-dutilisation" class="nav-link">Exemples d'utilisation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#depannage" class="nav-link">Dépannage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#notes-techniques" class="nav-link">Notes techniques</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -220,161 +224,169 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="guide-dutilisation-de-la-borne-arcade">Guide d'utilisation de la Borne Arcade<a class="headerlink" href="#guide-dutilisation-de-la-borne-arcade" title="Permanent link">&para;</a></h1>
-<p>Ce guide explique comment utiliser la borne arcade, lancer les jeux et gérer le système.</p>
-<h2 id="demarrage-de-la-borne">Démarrage de la borne<a class="headerlink" href="#demarrage-de-la-borne" title="Permanent link">&para;</a></h2>
-<h3 id="lancement-automatique">Lancement automatique<a class="headerlink" href="#lancement-automatique" title="Permanent link">&para;</a></h3>
-<p>Pour configurer le démarage automatique, utilisez la commande :</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
-./install.sh
+<h1 id="analyse-de-jeux">Analyse de Jeux<a class="headerlink" href="#analyse-de-jeux" title="Permanent link">&para;</a></h1>
+<p>La borne arcade dispose d'outils d'analyse IA pour générer des présentations détaillées des jeux.</p>
+<h2 id="scripts-disponibles">Scripts disponibles<a class="headerlink" href="#scripts-disponibles" title="Permanent link">&para;</a></h2>
+<h3 id="1-analyse-individuelle-de-jeu">1. Analyse individuelle de jeu<a class="headerlink" href="#1-analyse-individuelle-de-jeu" title="Permanent link">&para;</a></h3>
+<p><strong>Fichier</strong> : <code>scripts/analyze_single_game.py</code></p>
+<p>Analyse un seul jeu et génère une présentation complète avec l'IA.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Lister les jeux disponibles</span>
+python3.14<span class="w"> </span>scripts/analyze_single_game.py<span class="w"> </span>--list
+
+<span class="c1"># Analyser un jeu spécifique</span>
+python3.14<span class="w"> </span>scripts/analyze_single_game.py<span class="w"> </span>--game<span class="w"> </span>Pong
+
+<span class="c1"># Avec un modèle IA différent</span>
+python3.14<span class="w"> </span>scripts/analyze_single_game.py<span class="w"> </span>--game<span class="w"> </span>Pong<span class="w"> </span>--model<span class="w"> </span>qwen2:latest
 </code></pre></div>
 
-<h3 id="lancement-manuel">Lancement manuel<a class="headerlink" href="#lancement-manuel" title="Permanent link">&para;</a></h3>
-<p>Pour lancer la borne manuellement, utilisez le script dédié :</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
-./lancerBorne.sh
+<p><strong>Fonctionnalités</strong> :
+- Extraction des données brutes du jeu (fichiers sources, README, requirements)
+- Génération d'une présentation attractive par IA
+- Format Markdown sans emojis
+- Logs détaillés en temps réel
+- Sauvegarde dans <code>game_presentations/</code></p>
+<p><strong>Résultat</strong> : Fichier Markdown avec présentation complète du jeu</p>
+<hr />
+<h3 id="2-analyse-batch-de-tous-les-jeux">2. Analyse batch de tous les jeux<a class="headerlink" href="#2-analyse-batch-de-tous-les-jeux" title="Permanent link">&para;</a></h3>
+<p><strong>Fichier</strong> : <code>scripts/analyze_games.py</code></p>
+<p>Analyse tous les jeux du dossier <code>projet/</code> en séquence.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Lister les jeux disponibles</span>
+python3.14<span class="w"> </span>scripts/analyze_games.py<span class="w"> </span>--list
+
+<span class="c1"># Analyser tous les jeux (délai de 2s entre chaque)</span>
+python3.14<span class="w"> </span>scripts/analyze_games.py
+
+<span class="c1"># Analyse rapide sans délai</span>
+python3.14<span class="w"> </span>scripts/analyze_games.py<span class="w"> </span>--delay<span class="w"> </span><span class="m">0</span>
+
+<span class="c1"># Avec modèle IA personnalisé</span>
+python3.14<span class="w"> </span>scripts/analyze_games.py<span class="w"> </span>--model<span class="w"> </span>gemma2:latest<span class="w"> </span>--delay<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 
-<p>Le script <code>lancerBorne.sh</code> effectue les opérations suivantes :
-1. Configure le clavier spécifique de la borne (<code>setxkbmap borne</code>)
-2. Nettoie les fichiers temporaires (<code>./clean.sh</code>)
-3. Compile le menu et tous les jeux (<code>./compilation.sh</code>)
-4. Lance l'application principale (<code>java -cp "bin:$JAVA_CP" Main</code>)</p>
-<h3 id="lancement-direct-developpement">Lancement direct (développement)<a class="headerlink" href="#lancement-direct-developpement" title="Permanent link">&para;</a></h3>
-<p>Pour un lancement rapide sans compilation complète :</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
-java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;bin:</span><span class="nv">$JAVA_CP</span><span class="s2">&quot;</span><span class="w"> </span>Main
-</code></pre></div>
-
-<h2 id="processus-de-demarrage-detaille">Processus de démarrage détaillé<a class="headerlink" href="#processus-de-demarrage-detaille" title="Permanent link">&para;</a></h2>
-<h3 id="1-configuration-du-clavier">1. Configuration du clavier<a class="headerlink" href="#1-configuration-du-clavier" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>setxkbmap<span class="w"> </span>borne
-</code></pre></div>
-
-<p>Configure la disposition des touches spécifique à la borne arcade.</p>
-<h3 id="2-nettoyage">2. Nettoyage<a class="headerlink" href="#2-nettoyage" title="Permanent link">&para;</a></h3>
-<p>Le script <code>clean.sh</code> supprime :
-- Les fichiers compilés (<code>bin/*</code>)
-- Les fichiers temporaires (<code>*~</code>)
-- Les classes compilées des jeux (<code>projet/*/*.class</code>)</p>
-<h3 id="3-compilation">3. Compilation<a class="headerlink" href="#3-compilation" title="Permanent link">&para;</a></h3>
-<p>Le script <code>compilation.sh</code> effectue :</p>
-<p><strong>Compilation du menu principal</strong> :</p>
-<div class="codehilite"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>bin
-javac<span class="w"> </span>-d<span class="w"> </span>bin<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$JAVA_CP</span><span class="s2">&quot;</span><span class="w"> </span>src/*.java
-</code></pre></div>
-
-<p><strong>Compilation des jeux</strong> :</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>projet
-<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$i</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span>ls<span class="w"> </span>*.java<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span>javac<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$JAVA_CP</span><span class="s2">:../../bin:../..&quot;</span><span class="w"> </span>*.java
-<span class="w">    </span><span class="k">fi</span>
-<span class="w">    </span><span class="nb">cd</span><span class="w"> </span>..
-<span class="k">done</span>
-</code></pre></div>
-
-<p><strong>Génération de la liste des jeux</strong> :</p>
-<div class="codehilite"><pre><span></span><code>./scripts/liste_jeux.sh<span class="w"> </span>&gt;<span class="w"> </span>data/noms_jeux.txt
-</code></pre></div>
-
-<p><strong>Permissions des scripts</strong> :</p>
-<div class="codehilite"><pre><span></span><code>./scripts/set_executable.sh
-</code></pre></div>
-
-<h2 id="arret-de-la-borne">Arrêt de la borne<a class="headerlink" href="#arret-de-la-borne" title="Permanent link">&para;</a></h2>
-<h3 id="arret-propre">Arrêt propre<a class="headerlink" href="#arret-propre" title="Permanent link">&para;</a></h3>
-<p>Pour arrêter la borne proprement :
-2. Utilisez le bouton "Quitter" (sur PC le bouton Y) dans le menu pour quitter
-3. Le script <code>lancerBorne.sh</code> peut être configuré pour éteindre le système automatiquement</p>
-<h3 id="arret-systeme">Arrêt système<a class="headerlink" href="#arret-systeme" title="Permanent link">&para;</a></h3>
-<p>L'arrêt système est géré par le script <code>lancerBorne.sh</code> et ferme la borne après avoir fermé le menu de la borne.</p>
-<h2 id="interface-utilisateur">Interface utilisateur<a class="headerlink" href="#interface-utilisateur" title="Permanent link">&para;</a></h2>
-<h3 id="navigation-principale">Navigation principale<a class="headerlink" href="#navigation-principale" title="Permanent link">&para;</a></h3>
+<p><strong>Fonctionnalités</strong> :
+- Analyse séquentielle de tous les jeux
+- Utilise le script d'analyse individuelle pour chaque jeu
+- Génération d'un rapport récapitulatif
+- Gestion des erreurs individuelles
+- Durée totale estimée</p>
+<p><strong>Résultats</strong> :
+- Fichiers individuels dans <code>game_presentations/</code>
+- Rapport récapitulatif dans <code>batch_analysis_summary.md</code></p>
+<hr />
+<h2 id="configuration-requise">Configuration requise<a class="headerlink" href="#configuration-requise" title="Permanent link">&para;</a></h2>
+<h3 id="dependances">Dépendances<a class="headerlink" href="#dependances" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Joystick</strong> : Navigation dans le menu (haut/bas)</li>
-<li><strong>Bouton A</strong> : Sélectionner et lancer un jeu</li>
-<li><strong>Bouton Z</strong> : Menu de confirmation pour quitter</li>
-<li><strong>ESC</strong> : Retour au menu principal depuis un jeu</li>
+<li>Python 3.11+</li>
+<li>Ollama (installé et fonctionnel)</li>
+<li>Accès réseau au serveur Ollama</li>
 </ul>
-<h3 id="controles-par-defaut">Contrôles par défaut<a class="headerlink" href="#controles-par-defaut" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Joueur 1</th>
-<th>Joueur 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Haut</td>
-<td>Flèche haut</td>
-<td>O</td>
-</tr>
-<tr>
-<td>Bas</td>
-<td>Flèche bas</td>
-<td>L</td>
-</tr>
-<tr>
-<td>Gauche</td>
-<td>Flèche gauche</td>
-<td>K</td>
-</tr>
-<tr>
-<td>Droite</td>
-<td>Flèche droite</td>
-<td>M</td>
-</tr>
-<tr>
-<td>Bouton A</td>
-<td>R</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Bouton B</td>
-<td>T</td>
-<td>Z</td>
-</tr>
-<tr>
-<td>Bouton C</td>
-<td>Y</td>
-<td>E</td>
-</tr>
-<tr>
-<td>Bouton X</td>
-<td>F</td>
-<td>Q</td>
-</tr>
-<tr>
-<td>Bouton Y</td>
-<td>G</td>
-<td>S</td>
-</tr>
-<tr>
-<td>Bouton Z</td>
-<td>H</td>
-<td>D</td>
-</tr>
-</tbody>
-</table>
-<h2 id="scripts-utilitaires">Scripts utilitaires<a class="headerlink" href="#scripts-utilitaires" title="Permanent link">&para;</a></h2>
-<h3 id="liste-des-jeux">Liste des jeux<a class="headerlink" href="#liste-des-jeux" title="Permanent link">&para;</a></h3>
-<p>Pour voir tous les jeux disponibles :</p>
-<div class="codehilite"><pre><span></span><code>./scripts/liste_jeux.sh
+<h3 id="modeles-ia-compatibles">Modèles IA compatibles<a class="headerlink" href="#modeles-ia-compatibles" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>gemma2:latest</code> (recommandé)</li>
+<li><code>qwen2:latest</code></li>
+<li>Autres modèles Ollama compatibles</li>
+</ul>
+<h3 id="timeout">Timeout<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h3>
+<p>Le timeout Ollama est configuré à 120 secondes pour les analyses longues.</p>
+<hr />
+<h2 id="structure-des-fichiers-generes">Structure des fichiers générés<a class="headerlink" href="#structure-des-fichiers-generes" title="Permanent link">&para;</a></h2>
+<h3 id="presentations-individuelles">Présentations individuelles<a class="headerlink" href="#presentations-individuelles" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>game_presentations/
+├── presentation_columns.md
+├── presentation_pong.md
+├── presentation_minesweeper.md
+└── ...
 </code></pre></div>
 
-<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
-<p>Pour donner les permissions d'exécution à tous les scripts de jeux :</p>
-<div class="codehilite"><pre><span></span><code>./scripts/set_executable.sh
+<p>Chaque fichier contient :
+- Métadonnées (jeu, date, modèle, durée)
+- Présentation générée par l'IA avec sections :
+  - Description
+  - Objectif du jeu
+  - Comment jouer
+  - Points forts
+  - Aspect technique
+  - Pour qui ?
+  - Note finale</p>
+<h3 id="rapport-batch">Rapport batch<a class="headerlink" href="#rapport-batch" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>batch_analysis_summary.md
 </code></pre></div>
 
-<h3 id="mise-a-jour">Mise à jour<a class="headerlink" href="#mise-a-jour" title="Permanent link">&para;</a></h3>
-<p>Pour mettre à jour le projet :</p>
-<div class="codehilite"><pre><span></span><code>./update.sh
-</code></pre></div></div>
+<p>Contient :
+- Statistiques globales
+- Détail par jeu (succès/erreurs)
+- Liste des fichiers générés
+- Durée totale</p>
+<hr />
+<h2 id="exemples-dutilisation">Exemples d'utilisation<a class="headerlink" href="#exemples-dutilisation" title="Permanent link">&para;</a></h2>
+<h3 id="analyser-un-seul-jeu">Analyser un seul jeu<a class="headerlink" href="#analyser-un-seul-jeu" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
+python3.14<span class="w"> </span>scripts/analyze_single_game.py<span class="w"> </span>--game<span class="w"> </span>Minesweeper
+</code></pre></div>
+
+<p>Résultat attendu :</p>
+<div class="codehilite"><pre><span></span><code>🎮===========================================================
+🎮  ANALYSE DU JEU: Minesweeper
+🎮===========================================================
+📂 Chemin du jeu: /home/pi/git/borne_arcade/projet/Minesweeper
+🤖 Modèle IA: gemma2:latest
+
+[1/4] 📂 Extraction des données brutes...
+   📖 Fichier README trouvé: README.md
+   ✅ 99 fichiers extraits
+
+[2/4] 📝 Création du prompt de présentation...
+   ✅ Prompt de présentation de 2906 caractères créé
+
+[3/4] 🤖 Génération de la présentation...
+   ✅ Présentation générée en 45.2s
+
+[4/4] 💾 Sauvegarde de la présentation...
+   ✅ Présentation sauvegardée: game_presentations/presentation_minesweeper.md
+</code></pre></div>
+
+<h3 id="analyser-tous-les-jeux">Analyser tous les jeux<a class="headerlink" href="#analyser-tous-les-jeux" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
+python3.14<span class="w"> </span>scripts/analyze_games.py<span class="w"> </span>--delay<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+
+<p>Analysera les 14 jeux avec un délai de 1 seconde entre chaque.</p>
+<hr />
+<h2 id="depannage">Dépannage<a class="headerlink" href="#depannage" title="Permanent link">&para;</a></h2>
+<h3 id="problemes-courants">Problèmes courants<a class="headerlink" href="#problemes-courants" title="Permanent link">&para;</a></h3>
+<p><strong>Timeout Ollama</strong>
+- Augmenter le timeout dans <code>ollama_wrapper.py</code>
+- Vérifier la connexion au serveur Ollama</p>
+<p><strong>Jeu non trouvé</strong>
+- Vérifier que le jeu existe dans <code>projet/</code>
+- Utiliser <code>--list</code> pour voir les jeux disponibles</p>
+<p><strong>Erreur d'extraction</strong>
+- Vérifier les permissions sur les fichiers
+- Certains jeux peuvent avoir des structures inhabituelles</p>
+<h3 id="logs-detailles">Logs détaillés<a class="headerlink" href="#logs-detailles" title="Permanent link">&para;</a></h3>
+<p>Les scripts fournissent des logs détaillés avec :
+- Progression en temps réel
+- Nombre de fichiers extraits
+- Durée de chaque étape
+- Erreurs spécifiques</p>
+<hr />
+<h2 id="notes-techniques">Notes techniques<a class="headerlink" href="#notes-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>analyze_single_game.py</code> : Analyse individuelle</li>
+<li><code>analyze_games.py</code> : Batch utilisant l'analyse individuelle</li>
+<li><code>ollama_wrapper.py</code> : Interface avec Ollama</li>
+</ul>
+<h3 id="personnalisation">Personnalisation<a class="headerlink" href="#personnalisation" title="Permanent link">&para;</a></h3>
+<p>Les prompts peuvent être modifiés dans les scripts pour changer :
+- Style de présentation
+- Sections demandées
+- Format de sortie</p>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Temps moyen par jeu : 3-5 minutes</li>
+</ul></div>
             </div>
         </div>
 

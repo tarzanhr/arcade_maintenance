@@ -2,54 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/ajout_jeu/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
-         <loc>https://TarzanHR.github.io/arcade_maintenance/mg2d/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/analyse_jeux/</loc>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
-         <loc>https://TarzanHR.github.io/arcade_maintenance/scripts/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/src/</loc>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/utilisation/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_ball-blast/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_columns/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_cursedware/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_dinorail/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_initialdrift/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_javaspace/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_kowasu_renga/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_minesweeper/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_osutile/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_pianotile/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_pong/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_puissance_x/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_snake_eater/</loc>
+         <lastmod>2026-03-04</lastmod>
+    </url>
+    <url>
+         <loc>https://TarzanHR.github.io/arcade_maintenance/jeux/presentation_trongame/</loc>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/BoiteDescription/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/BoiteImage/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/BoiteSelection/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/Bouton/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/ClavierBorneArcade/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/Graphique/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/Main/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
     <url>
          <loc>https://TarzanHR.github.io/arcade_maintenance/src/Pointeur/</loc>
-         <lastmod>2026-02-12</lastmod>
+         <lastmod>2026-03-04</lastmod>
     </url>
 </urlset>

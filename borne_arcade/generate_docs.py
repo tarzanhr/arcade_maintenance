@@ -8,6 +8,7 @@ structurée pour MkDocs à partir des commentaires Javadoc.
 import os
 import re
 import json
+import yaml
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -118,30 +119,23 @@ class JavaDocGenerator:
         return doc
     
     def update_mkdocs_config(self):
-        """Met à jour le fichier mkdocs.yml avec la structure de navigation."""
-        nav = ['index.md']
-        
+        """Met à jour uniquement la section Code Source dans mkdocs.yml sans toucher au reste."""
+        with open(self.mkdocs_config, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+
+        # Reconstruire la section Code Source uniquement
+        code_source_entries = [{"Vue d'ensemble": "src.md"}]
         for class_info in sorted(self.classes_info, key=lambda x: x['name']):
-            nav.append(f"src/{class_info['name']}.md")
-        
-        config_content = f"""site_name: IUT Arcade
-site_url: https://TarzanHR.github.io/arcade_maintenance/
-nav:
-  - "Accueil": index.md
-  - "Utilisation": utilisation.md
-  - "Code Source": 
-    - "Vue d'ensemble": src.md"""
-        
-        for class_info in sorted(self.classes_info, key=lambda x: x['name']):
-            config_content += f"\n    - \"{class_info['name']}\": src/{class_info['name']}.md"
-        
-        config_content += """
-  - "Développement":
-    - "Ajouter un jeu": ajout_jeu.md"""
-        
-        config_content += "\n\ntheme:\n  name: mkdocs\n  language: fr\n\nplugins:\n  - search\n\nmarkdown_extensions:\n  - codehilite\n  - admonition\n  - toc:\n      permalink: true"
-        
-        self.mkdocs_config.write_text(config_content, encoding='utf-8')
+            code_source_entries.append({class_info['name']: f"src/{class_info['name']}.md"})
+
+        # Mettre a jour uniquement la section "Code Source" dans la nav existante
+        for i, entry in enumerate(config.get('nav', [])):
+            if isinstance(entry, dict) and 'Code Source' in entry:
+                config['nav'][i] = {'Code Source': code_source_entries}
+                break
+
+        with open(self.mkdocs_config, 'w', encoding='utf-8') as f:
+            yaml.dump(config, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
     
     def generate_documentation(self):
         """Génère toute la documentation."""

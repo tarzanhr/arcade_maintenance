@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://TarzanHR.github.io/arcade_maintenance/ajout_jeu/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Guide d'ajout de jeux - IUT Arcade</title>
+        <title>Ajouter un jeu - IUT Arcade</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -37,9 +37,16 @@
                             <li class="nav-item">
                                 <a href=".." class="nav-link">Accueil</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="../utilisation/" class="nav-link">Utilisation</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Code Source</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../src/" class="dropdown-item">Vue d'ensemble</a>
+</li>
                                     
 <li>
     <a href="../src/BoiteDescription/" class="dropdown-item">BoiteDescription</a>
@@ -74,6 +81,80 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Développement</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Ajouter un jeu</a>
+</li>
+                                    
+<li>
+    <a href="../analyse_jeux/" class="dropdown-item">Analyse IA des jeux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jeux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../jeux/presentation_ball-blast/" class="dropdown-item">ball-blast</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_columns/" class="dropdown-item">Columns</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_cursedware/" class="dropdown-item">CursedWare</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_dinorail/" class="dropdown-item">DinoRail</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_initialdrift/" class="dropdown-item">InitialDrift</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_javaspace/" class="dropdown-item">JavaSpace</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_kowasu_renga/" class="dropdown-item">Kowasu Renga</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_minesweeper/" class="dropdown-item">Minesweeper</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_osutile/" class="dropdown-item">OsuTile</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_pianotile/" class="dropdown-item">PianoTile</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_pong/" class="dropdown-item">Pong</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_puissance_x/" class="dropdown-item">Puissance X</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_snake_eater/" class="dropdown-item">Snake Eater</a>
+</li>
+                                    
+<li>
+    <a href="../jeux/presentation_trongame/" class="dropdown-item">TronGame</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -82,6 +163,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../src/Pointeur/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../analyse_jeux/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -114,19 +205,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#notes-importantes" class="nav-link">Notes importantes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#technologies-supportees" class="nav-link">Technologies supportées</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#bonnes-pratiques" class="nav-link">Bonnes pratiques</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#test-du-jeu" class="nav-link">Test du jeu</a>
+            <li class="nav-item" data-bs-level="2"><a href="#exemple-complet-base-sur-dinorail" class="nav-link">Exemple complet basé sur DinoRail</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#deploiement" class="nav-link">Déploiement</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#exemple-complet" class="nav-link">Exemple complet</a>
+            <li class="nav-item" data-bs-level="2"><a href="#depannage" class="nav-link">Dépannage</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -146,8 +241,15 @@
 <li>Les jeux doivent utiliser les contrôles standards de la borne</li>
 </ul>
 <h2 id="structure-dun-jeu">Structure d'un jeu<a class="headerlink" href="#structure-dun-jeu" title="Permanent link">&para;</a></h2>
+<h3 id="analyse-du-code-source">Analyse du code source<a class="headerlink" href="#analyse-du-code-source" title="Permanent link">&para;</a></h3>
+<p>D'après l'analyse du code source de la borne (<code>Graphique.java</code>, <code>Bouton.java</code>, <code>Pointeur.java</code>), voici comment fonctionne réellement l'ajout de jeux :</p>
+<ol>
+<li><strong>Découverte automatique</strong> : La borne scanne le répertoire <code>projet/</code> pour découvrir les jeux</li>
+<li><strong>Création des boutons</strong> : Chaque sous-dossier de <code>projet/</code> devient un bouton dans le menu</li>
+<li><strong>Lancement par script</strong> : Chaque jeu doit avoir un script <code>.sh</code> avec le même nom que le dossier</li>
+</ol>
 <h3 id="classe-principale">Classe principale<a class="headerlink" href="#classe-principale" title="Permanent link">&para;</a></h3>
-<p>Chaque jeu doit avoir une classe principale qui hérite des fonctionnalités de base de la borne :</p>
+<p>Chaque jeu doit avoir une classe principale qui utilise les contrôles de la borne :</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.*</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.event.*</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.*</span><span class="p">;</span>
@@ -156,18 +258,18 @@
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">jeuEnCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ClavierBorneArcade</span><span class="w"> </span><span class="n">clavier</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MonJeu</span><span class="p">(</span><span class="n">ClavierBorneArcade</span><span class="w"> </span><span class="n">clavier</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">clavier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clavier</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MonJeu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Le clavier est géré par la borne, pas besoin de le créer</span>
 <span class="w">        </span><span class="n">initialiserJeu</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialiserJeu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Initialisation du jeu</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MonJeu</span><span class="w"> </span><span class="n">jeu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MonJeu</span><span class="p">();</span>
+<span class="w">        </span><span class="n">jeu</span><span class="p">.</span><span class="na">jouer</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">jouer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">jeuEnCours</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">// Logique du jeu</span>
 <span class="w">            </span><span class="n">traiterEntrees</span><span class="p">();</span>
 <span class="w">            </span><span class="n">mettreAJour</span><span class="p">();</span>
 <span class="w">            </span><span class="n">dessiner</span><span class="p">();</span>
@@ -181,22 +283,8 @@
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">traiterEntrees</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Gestion des entrées clavier</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getATape</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">// Action bouton A</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getHautTape</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">// Action haut</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="c1">// ... autres contrôles</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mettreAJour</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Logique du jeu</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dessiner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Rendu graphique</span>
+<span class="w">        </span><span class="c1">// Utiliser les contrôles via System.in ou autre méthode</span>
+<span class="w">        </span><span class="c1">// selon l&#39;implémentation spécifique</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -204,115 +292,149 @@
 <h2 id="etapes-dajout-dun-jeu">Étapes d'ajout d'un jeu<a class="headerlink" href="#etapes-dajout-dun-jeu" title="Permanent link">&para;</a></h2>
 <h3 id="1-creer-le-repertoire-du-jeu">1. Créer le répertoire du jeu<a class="headerlink" href="#1-creer-le-repertoire-du-jeu" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
-mkdir<span class="w"> </span>jeux/mon_jeu
+mkdir<span class="w"> </span>projet/mon_jeu
 </code></pre></div>
 
 <h3 id="2-developper-le-jeu">2. Développer le jeu<a class="headerlink" href="#2-developper-le-jeu" title="Permanent link">&para;</a></h3>
-<p>Créez les fichiers Java dans le répertoire <code>jeux/mon_jeu/</code> :</p>
-<div class="codehilite"><pre><span></span><code>jeux/mon_jeu/
+<p>Créez les fichiers Java dans le répertoire <code>projet/mon_jeu/</code> :</p>
+<div class="codehilite"><pre><span></span><code>projet/mon_jeu/
 ├── MonJeu.java          # Classe principale
 ├── Personnage.java     # Classes additionnelles
 ├── Niveau.java
-└── assets/             # Ressources du jeu
-    ├── images/
-    └── sons/
+├── assets/             # Ressources du jeu
+│   ├── images/
+│   └── sons/
+├── description.txt     # Description du jeu (affichée dans le menu)
+├── bouton.txt         # Configuration des boutons (obligatoire)
+├── highscore          # Fichier de high scores (créé automatiquement)
+├── image.png          # Image de prévisualisation (optionnel)
+├── photo.png          # Photo du jeu (optionnel)
+└── photo_small.png    # Petite vignette (optionnel)
 </code></pre></div>
 
-<h3 id="3-compiler-le-jeu">3. Compiler le jeu<a class="headerlink" href="#3-compiler-le-jeu" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>jeux/mon_jeu
-javac<span class="w"> </span>-cp<span class="w"> </span>../../src:.<span class="w"> </span>*.java
+<blockquote>
+<p>ce n'est qu'un exemple, vous pouvez faire la structure que vous voulez le temps que le script de lancement, bouton.txt, image.png, photo.png et photo_small.png soient présents à la racine du jeu.</p>
+</blockquote>
+<h3 id="3-creer-le-script-de-lancement">3. Créer le script de lancement<a class="headerlink" href="#3-creer-le-script-de-lancement" title="Permanent link">&para;</a></h3>
+<p>Créez un fichier <code>&lt;nom du jeu&gt;.sh</code> dans le répertoire du jeu
+Choisissez le type de script selon votre technologie :</p>
+<p><strong>Pour les jeux Java avec MG2D</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/common.sh&quot;</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BORNE_ROOT</span><span class="s2">/projet/&lt;nom_du_jeu&gt;&quot;</span>
+java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;.:../..:</span><span class="nv">$BORNE_ROOT</span><span class="s2">/bin:</span><span class="nv">$MG2D_JAR</span><span class="s2">&quot;</span><span class="w"> </span>&lt;ClassePrincipale&gt;
 </code></pre></div>
 
-<h3 id="4-ajouter-le-jeu-a-la-liste">4. Ajouter le jeu à la liste<a class="headerlink" href="#4-ajouter-le-jeu-a-la-liste" title="Permanent link">&para;</a></h3>
-<p>Modifiez le fichier <code>data/noms_jeux.txt</code> :</p>
-<div class="codehilite"><pre><span></span><code>Jeu1
-Jeu2
-MonJeu
+<blockquote>
+<p>Si vous n'utilisez pas MG2D, vous n'avez pas à l'importer dans le script de lancement.</p>
+</blockquote>
+<p><strong>Pour les jeux Python</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/common.sh&quot;</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BORNE_ROOT</span><span class="s2">/projet/&lt;nom_du_jeu&gt;&quot;</span>
+python3<span class="w"> </span>app/game.py
 </code></pre></div>
 
-<h3 id="5-integrer-dans-le-systeme-principal">5. Intégrer dans le système principal<a class="headerlink" href="#5-integrer-dans-le-systeme-principal" title="Permanent link">&para;</a></h3>
-<p>Modifiez la classe <code>Graphique.java</code> pour inclure votre jeu dans la logique de sélection :</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Dans la méthode selectionJeu()</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">selection</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;MonJeu&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">MonJeu</span><span class="w"> </span><span class="n">jeu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MonJeu</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">clavier</span><span class="p">);</span>
-<span class="w">    </span><span class="n">jeu</span><span class="p">.</span><span class="na">jouer</span><span class="p">();</span>
-<span class="p">}</span>
+<blockquote>
+<p>Si vous utilisez des bibliothèques externes, vous devez mettre un requirement.txt à la racine du jeu.</p>
+</blockquote>
+<p><strong>Pour les jeux LÖVE (Lua)</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">/common.sh&quot;</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BORNE_ROOT</span><span class="s2">/projet/&lt;nom_du_jeu&gt;&quot;</span>
+love<span class="w"> </span>.
 </code></pre></div>
 
-<h2 id="bonnes-pratiques">Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Permanent link">&para;</a></h2>
-<h3 id="controles-normalises">Contrôles normalisés<a class="headerlink" href="#controles-normalises" title="Permanent link">&para;</a></h3>
-<p>Utilisez les contrôles standards définis dans <code>ClavierBorneArcade</code> :</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Mouvements</span>
-<span class="n">clavier</span><span class="p">.</span><span class="na">getHaut</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getBas</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getGauche</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getDroite</span><span class="p">()</span>
+<h3 id="4-creer-les-fichiers-de-description">4. Créer les fichiers de description<a class="headerlink" href="#4-creer-les-fichiers-de-description" title="Permanent link">&para;</a></h3>
+<p><strong>description.txt</strong> (obligatoire) :</p>
+<div class="codehilite"><pre><span></span><code>MonJeu - Votre Nom - 2025
 
-<span class="c1">// Boutons action</span>
-<span class="n">clavier</span><span class="p">.</span><span class="na">getA</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getB</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getC</span><span class="p">()</span>
-<span class="n">clavier</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getZ</span><span class="p">()</span>
+Description courte du jeu qui sera affichée
+dans le menu de la borne arcade.
 
-<span class="c1">// Détection d&#39;appui unique</span>
-<span class="n">clavier</span><span class="p">.</span><span class="na">getHautTape</span><span class="p">(),</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getATape</span><span class="p">(),</span><span class="w"> </span><span class="n">etc</span><span class="p">.</span>
+Crédits:
+auteur1 (pour la contribution1)
+auteur2 (pour la contribution2)
 </code></pre></div>
 
-<h3 id="gestion-des-ressources">Gestion des ressources<a class="headerlink" href="#gestion-des-ressources" title="Permanent link">&para;</a></h3>
-<p>Placez les ressources dans un sous-dossier <code>assets/</code> :</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Chargement d&#39;images</span>
-<span class="n">Image</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Toolkit</span><span class="p">.</span><span class="na">getDefaultToolkit</span><span class="p">().</span><span class="na">getImage</span><span class="p">(</span><span class="s">&quot;assets/images/personnage.png&quot;</span><span class="p">);</span>
-
-<span class="c1">// Chargement de sons (si applicable)</span>
-<span class="c1">// Utiliser java.applet.AudioClip ou autre bibliothèque audio</span>
+<p><strong>bouton.txt</strong> (obligatoire) :
+Le format est : <code>TexteJoystick:TexteBoutonA:TexteBoutonB:TexteBoutonC:TexteBoutonX:TexteBoutonY:TexteBoutonZ:</code></p>
+<h3 id="5-detection-automatique">5. Détection automatique<a class="headerlink" href="#5-detection-automatique" title="Permanent link">&para;</a></h3>
+<p>La borne détecte automatiquement les nouveaux jeux :
+- Au démarrage, elle scanne le répertoire <code>projet/</code>
+- Chaque sous-dossier devient un bouton dans le menu
+- Le nom du dossier devient le nom affiché dans le menu
+- Le script <code>.sh</code> est utilisé pour lancer le jeu</p>
+<h3 id="6-import-mg2d">6. Import MG2D<a class="headerlink" href="#6-import-mg2d" title="Permanent link">&para;</a></h3>
+<p>Pour utiliser la bibliothèque MG2D, ajoutez les imports en haut de vos fichiers Java :</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.geometrie.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.*</span><span class="p">;</span>
 </code></pre></div>
 
-<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Important</strong> : MG2D est déjà installée sur la borne et accessible via <code>$MG2D_JAR</code></p>
+</blockquote>
+<h2 id="notes-importantes">Notes importantes<a class="headerlink" href="#notes-importantes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Maintenez 60 FPS (16ms par frame)</li>
-<li>Évitez les allocations d'objets dans la boucle principale</li>
-<li>Utilisez des techniques d'optimisation graphique</li>
+<li>Le nom du dossier doit correspondre exactement au nom du script <code>.sh</code></li>
+<li>Le fichier <code>description.txt</code> est obligatoire pour afficher une description dans le menu</li>
+<li>Le fichier <code>bouton.txt</code> est obligatoire pour afficher les contrôles dans le menu</li>
+<li>Le fichier <code>highscore</code> est créé automatiquement mais doit exister pour éviter les erreurs</li>
+<li>La borne détecte automatiquement les nouveaux jeux au prochain lancement/redémarrage</li>
+<li>Les images <code>image.png</code>, <code>photo.png</code> et <code>photo_small.png</code> sont utilisées pour l'affichage dans le menu</li>
 </ul>
+<h2 id="technologies-supportees">Technologies supportées<a class="headerlink" href="#technologies-supportees" title="Permanent link">&para;</a></h2>
+<h3 id="java-mg2d-recommande">Java + MG2D (recommandé)<a class="headerlink" href="#java-mg2d-recommande" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Avantages</strong> : Performant, bien intégré avec la borne</li>
+<li><strong>Utilisation</strong> : <code>java -cp ".:../..:$BORNE_ROOT/bin:$MG2D_JAR" Main</code></li>
+<li><strong>Exemples</strong> : Pong, Snake, Columns, DinoRail, JavaSpace, Minesweeper</li>
+</ul>
+<h3 id="python-3">Python 3<a class="headerlink" href="#python-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Avantages</strong> : Facile à développer, nombreuses bibliothèques</li>
+<li><strong>Utilisation</strong> : <code>python3 app/game.py</code> ou <code>"$BORNE_ROOT/tools/python_wrapper.sh" main.py</code></li>
+<li><strong>Exemples</strong> : PianoTile, TronGame</li>
+</ul>
+<h3 id="love-lua">LÖVE (Lua)<a class="headerlink" href="#love-lua" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Avantages</strong> : Framework 2D complet, bonne performance</li>
+<li><strong>Utilisation</strong> : <code>love .</code></li>
+<li><strong>Exemples</strong> : CursedWare</li>
+</ul>
+<h2 id="bonnes-pratiques">Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Permanent link">&para;</a></h2>
+<h3 id="controles-de-la-borne">Contrôles de la borne<a class="headerlink" href="#controles-de-la-borne" title="Permanent link">&para;</a></h3>
+<p>La borne utilise <code>ClavierBorneArcade</code> pour gérer les entrées. Dans vos jeux, vous pouvez :</p>
+<ol>
+<li><strong>Utiliser les contrôles standards</strong> via les méthodes de <code>ClavierBorneArcade</code></li>
+<li><strong>Créer votre propre gestionnaire</strong> si vous hébergez <code>ClavierBorneArcade.java</code> dans votre jeu</li>
+</ol>
 <h3 id="sortie-du-jeu">Sortie du jeu<a class="headerlink" href="#sortie-du-jeu" title="Permanent link">&para;</a></h3>
-<p>Prévoyez toujours un moyen de quitter le jeu :</p>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getATape</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">getXTape</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Combinaison pour quitter</span>
-<span class="w">    </span><span class="n">jeuEnCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<p>Prévoyez un moyen de quitter le jeu pour retourner au menu :</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Exemple : touche ESC ou combinaison de boutons</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toucheQuitter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Retour au menu de la borne</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="test-du-jeu">Test du jeu<a class="headerlink" href="#test-du-jeu" title="Permanent link">&para;</a></h2>
-<h3 id="test-manuel">Test manuel<a class="headerlink" href="#test-manuel" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/pi/git/borne_arcade
-java<span class="w"> </span>-cp<span class="w"> </span>src:jeux/mon_jeu<span class="w"> </span>Main
-</code></pre></div>
+<h2 id="exemple-complet-base-sur-dinorail">Exemple complet basé sur DinoRail<a class="headerlink" href="#exemple-complet-base-sur-dinorail" title="Permanent link">&para;</a></h2>
+<p>Voici un exemple simplifié basé sur le jeu DinoRail existant :</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.geometrie.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.*</span><span class="p">;</span>
 
-<h3 id="test-des-controles">Test des contrôles<a class="headerlink" href="#test-des-controles" title="Permanent link">&para;</a></h3>
-<p>Vérifiez que tous les contrôles fonctionnent correctement :
-- Mouvements dans toutes les directions
-- Tous les boutons répondent
-- La combinaison de sortie fonctionne</p>
-<h2 id="deploiement">Déploiement<a class="headerlink" href="#deploiement" title="Permanent link">&para;</a></h2>
-<p>Une fois le jeu testé et fonctionnel :</p>
-<ol>
-<li><strong>Version finale</strong> : Nettoyez le code et ajoutez des commentaires</li>
-<li><strong>Documentation</strong> : Créez un README spécifique au jeu</li>
-<li><strong>Tests</strong> : Faites tester le jeu par plusieurs utilisateurs</li>
-<li><strong>Intégration</strong> : Ajoutez-le officiellement à la borne</li>
-</ol>
-<h2 id="exemple-complet">Exemple complet<a class="headerlink" href="#exemple-complet" title="Permanent link">&para;</a></h2>
-<p>Voici un exemple simple de jeu Pong :</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.*</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">mg2d.*</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MonJeu</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Fenetre</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">jeuEnCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PongSimple</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">enCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ClavierBorneArcade</span><span class="w"> </span><span class="n">clavier</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">balleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vitesseBalleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">vitesseBalleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PongSimple</span><span class="p">(</span><span class="n">ClavierBorneArcade</span><span class="w"> </span><span class="n">clavier</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">clavier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clavier</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MonJeu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Fenetre</span><span class="p">(</span><span class="s">&quot;Mon Jeu&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span>
+<span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">jouer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">enCours</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">jeuEnCours</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">traiterEntrees</span><span class="p">();</span>
 <span class="w">            </span><span class="n">mettreAJour</span><span class="p">();</span>
 <span class="w">            </span><span class="n">dessiner</span><span class="p">();</span>
@@ -321,46 +443,84 @@ java<span class="w"> </span>-cp<span class="w"> </span>src:jeux/mon_jeu<span cla
 <span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="na">dispose</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">traiterEntrees</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Joueur 1 (Q/S pour haut/bas)</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getQ</span><span class="p">())</span><span class="w"> </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getS</span><span class="p">())</span><span class="w"> </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-
-<span class="w">        </span><span class="c1">// Joueur 2 (Flèches pour haut/bas)</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getHaut</span><span class="p">())</span><span class="w"> </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getBas</span><span class="p">())</span><span class="w"> </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-
-<span class="w">        </span><span class="c1">// Quitter avec ESC</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavier</span><span class="p">.</span><span class="na">getATape</span><span class="p">())</span><span class="w"> </span><span class="n">enCours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Gestion des entrées clavier/souris</span>
+<span class="w">        </span><span class="c1">// selon les besoins du jeu</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mettreAJour</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">balleX</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vitesseBalleX</span><span class="p">;</span>
-<span class="w">        </span><span class="n">balleY</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vitesseBalleY</span><span class="p">;</span>
-
-<span class="w">        </span><span class="c1">// Rebonds sur les murs haut/bas</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">balleY</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">600</span><span class="p">)</span><span class="w"> </span><span class="n">vitesseBalleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">vitesseBalleY</span><span class="p">;</span>
-
-<span class="w">        </span><span class="c1">// Rebonds sur les raquettes</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">balleX</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">vitesseBalleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">vitesseBalleX</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">balleX</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">750</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">balleY</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">vitesseBalleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">vitesseBalleX</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="c1">// Limites des raquettes</span>
-<span class="w">        </span><span class="n">raquette1Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">raquette1Y</span><span class="p">));</span>
-<span class="w">        </span><span class="n">raquette2Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">raquette2Y</span><span class="p">));</span>
+<span class="w">        </span><span class="c1">// Logique du jeu</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dessiner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Logique de dessin avec MG2D</span>
-<span class="w">        </span><span class="c1">// À implémenter selon la bibliothèque graphique utilisée</span>
+<span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="na">effacer</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Dessiner les éléments du jeu</span>
+<span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">joueur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">Couleur</span><span class="p">.</span><span class="na">BLEU</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="na">ajouter</span><span class="p">(</span><span class="n">joueur</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="na">rafraichir</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MonJeu</span><span class="w"> </span><span class="n">jeu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MonJeu</span><span class="p">();</span>
+<span class="w">        </span><span class="n">jeu</span><span class="p">.</span><span class="na">jouer</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="depannage">Dépannage<a class="headerlink" href="#depannage" title="Permanent link">&para;</a></h2>
+<h3 id="problemes-courants">Problèmes courants<a class="headerlink" href="#problemes-courants" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Le jeu n'apparaît pas dans le menu</strong></li>
+<li>Vérifiez que le dossier est dans <code>projet/</code></li>
+<li>Vérifiez que le script <code>.sh</code> existe et est exécutable et à le nom du projet</li>
+<li>Vérifiez que <code>description.txt</code> existe</li>
+<li>
+<p>Redémarrez la borne</p>
+</li>
+<li>
+<p><strong>Erreur de compilation Java</strong></p>
+</li>
+<li>Vérifiez le classpath dans le script <code>.sh</code></li>
+<li>Assurez-vous que MG2D est accessible via <code>$MG2D_JAR</code></li>
+<li>Vérifiez les imports dans vos fichiers Java</li>
+<li>
+<p>Certains jeux nécessitent des options JVM spéciales</p>
+</li>
+<li>
+<p><strong>Problèmes d'affichage</strong></p>
+</li>
+<li>Vérifiez que <code>xdotool mousemove 1280 1024</code> est dans le script</li>
+<li>Testez avec différentes résolutions</li>
+<li>
+<p>Vérifiez que les ressources sont accessibles</p>
+</li>
+<li>
+<p><strong>Jeux Python/LÖVE ne fonctionnent pas</strong></p>
+</li>
+<li>Vérifiez que Python 3 ou LÖVE est installé sur la borne</li>
+<li>Vérifiez les permissions des scripts</li>
+<li>Testez manuellement depuis le terminal</li>
+</ol>
+<h3 id="verification-par-technologie">Vérification par technologie<a class="headerlink" href="#verification-par-technologie" title="Permanent link">&para;</a></h3>
+<p><strong>Test manuel Java</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>projet/mon_jeu
+java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;.:../..:/home/pi/git/MG2D.jar&quot;</span><span class="w"> </span>MonJeu
+</code></pre></div>
+
+<p><strong>Test manuel Python</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>projet/mon_jeu
+python3<span class="w"> </span>app/game.py
+</code></pre></div>
+
+<p><strong>Test manuel LÖVE</strong> :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>projet/mon_jeu
+love<span class="w"> </span>.
 </code></pre></div></div>
             </div>
         </div>

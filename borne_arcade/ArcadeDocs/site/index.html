@@ -37,9 +37,16 @@
                             <li class="nav-item">
                                 <a href="." class="nav-link active" aria-current="page">Accueil</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="utilisation/" class="nav-link">Utilisation</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Code Source</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="src/" class="dropdown-item">Vue d'ensemble</a>
+</li>
                                     
 <li>
     <a href="src/BoiteDescription/" class="dropdown-item">BoiteDescription</a>
@@ -74,6 +81,80 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Développement</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="ajout_jeu/" class="dropdown-item">Ajouter un jeu</a>
+</li>
+                                    
+<li>
+    <a href="analyse_jeux/" class="dropdown-item">Analyse IA des jeux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jeux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="jeux/presentation_ball-blast/" class="dropdown-item">ball-blast</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_columns/" class="dropdown-item">Columns</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_cursedware/" class="dropdown-item">CursedWare</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_dinorail/" class="dropdown-item">DinoRail</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_initialdrift/" class="dropdown-item">InitialDrift</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_javaspace/" class="dropdown-item">JavaSpace</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_kowasu_renga/" class="dropdown-item">Kowasu Renga</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_minesweeper/" class="dropdown-item">Minesweeper</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_osutile/" class="dropdown-item">OsuTile</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_pianotile/" class="dropdown-item">PianoTile</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_pong/" class="dropdown-item">Pong</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_puissance_x/" class="dropdown-item">Puissance X</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_snake_eater/" class="dropdown-item">Snake Eater</a>
+</li>
+                                    
+<li>
+    <a href="jeux/presentation_trongame/" class="dropdown-item">TronGame</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -88,7 +169,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="src/BoiteDescription/" class="nav-link">
+                                <a rel="next" href="utilisation/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -112,11 +193,15 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#documentation-du-projet-borne-arcade" class="nav-link">Documentation du projet Borne Arcade</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#structure-des-classes" class="nav-link">Structure des classes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#guide-rapide" class="nav-link">Guide rapide</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#generation" class="nav-link">Génération</a>
+            <li class="nav-item" data-bs-level="2"><a href="#developpement" class="nav-link">Développement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#documentation-des-classes" class="nav-link">Documentation des classes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -129,20 +214,18 @@
 
 <h1 id="documentation-du-projet-borne-arcade">Documentation du projet Borne Arcade<a class="headerlink" href="#documentation-du-projet-borne-arcade" title="Permanent link">&para;</a></h1>
 <p>Bienvenue dans la documentation du projet Borne Arcade de l'IUT de Calais.</p>
-<h2 id="structure-des-classes">Structure des classes<a class="headerlink" href="#structure-des-classes" title="Permanent link">&para;</a></h2>
-<p>La documentation du code source est organisée dans la section <strong><a href="src/">Code Source</a></strong> :</p>
+<h2 id="guide-rapide">Guide rapide<a class="headerlink" href="#guide-rapide" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="src/BoiteImage/">BoiteImage</a> - BoiteImage.java</li>
-<li><a href="src/BoiteDescription/">BoiteDescription</a> - BoiteDescription.java</li>
-<li><a href="src/Pointeur/">Pointeur</a> - Pointeur.java</li>
-<li><a href="src/Bouton/">Bouton</a> - Bouton.java</li>
-<li><a href="src/ClavierBorneArcade/">ClavierBorneArcade</a> - ClavierBorneArcade.java</li>
-<li><a href="src/Graphique/">Graphique</a> - Graphique.java</li>
-<li><a href="src/BoiteSelection/">BoiteSelection</a> - BoiteSelection.java</li>
-<li><a href="src/Main/">Main</a> - Main.java</li>
+<li><strong><a href="utilisation/">Utilisation</a></strong> : Comment utiliser la borne arcade</li>
+<li><strong><a href="src/">Code Source</a></strong> : Architecture et documentation des classes</li>
+<li><strong><a href="#développement">Développement</a></strong> : Ajouter des jeux et développer</li>
 </ul>
-<h2 id="generation">Génération<a class="headerlink" href="#generation" title="Permanent link">&para;</a></h2>
-<p>Cette documentation a été générée automatiquement à partir des commentaires Javadoc présents dans les fichiers source Java.</p></div>
+<h2 id="developpement">Développement<a class="headerlink" href="#developpement" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="ajout_jeu/">Ajouter un jeu</a></strong> : Guide pour intégrer de nouveaux jeux</li>
+</ul>
+<h2 id="documentation-des-classes">Documentation des classes<a class="headerlink" href="#documentation-des-classes" title="Permanent link">&para;</a></h2>
+<p>La documentation détaillée des classes Java est accessible depuis la page <strong><a href="src/">Code Source</a></strong>.</p></div>
             </div>
         </div>
 
@@ -224,5 +307,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-02-12 09:45:02.510076+00:00
+Build Date UTC : 2026-03-04 09:41:18.125884+00:00
 -->
