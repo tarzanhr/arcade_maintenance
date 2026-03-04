@@ -1,0 +1,3 @@
+[submodule "borne_arcade/projet/CakeCraft"]
+	path = borne_arcade/projet/CakeCraft
+	url = https://github.com/NockXu/CakeCraft.git
