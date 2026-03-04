@@ -1,46 +1,43 @@
 site_name: IUT Arcade
 site_url: https://TarzanHR.github.io/arcade_maintenance/
 nav:
-  - "Accueil": index.md
-  - "Utilisation": utilisation.md
-  - "Code Source": 
-    - "Vue d'ensemble": src.md
-    - "BoiteDescription": src/BoiteDescription.md
-    - "BoiteImage": src/BoiteImage.md
-    - "BoiteSelection": src/BoiteSelection.md
-    - "Bouton": src/Bouton.md
-    - "ClavierBorneArcade": src/ClavierBorneArcade.md
-    - "Graphique": src/Graphique.md
-    - "Main": src/Main.md
-    - "Pointeur": src/Pointeur.md
-  - "Développement":
-    - "Ajouter un jeu": ajout_jeu.md
-    - "Analyse IA des jeux": analyse_jeux.md
-  - "Jeux":
-    - "ball-blast": jeux/presentation_ball-blast.md
-    - "Columns": jeux/presentation_columns.md
-    - "CursedWare": jeux/presentation_cursedware.md
-    - "DinoRail": jeux/presentation_dinorail.md
-    - "InitialDrift": jeux/presentation_initialdrift.md
-    - "JavaSpace": jeux/presentation_javaspace.md
-    - "Kowasu Renga": jeux/presentation_kowasu_renga.md
-    - "Minesweeper": jeux/presentation_minesweeper.md
-    - "OsuTile": jeux/presentation_osutile.md
-    - "PianoTile": jeux/presentation_pianotile.md
-    - "Pong": jeux/presentation_pong.md
-    - "Puissance X": jeux/presentation_puissance_x.md
-    - "Snake Eater": jeux/presentation_snake_eater.md
-    - "TronGame": jeux/presentation_trongame.md
-
+- Accueil: index.md
+- Utilisation: utilisation.md
+- Code Source:
+  - Vue d'ensemble: src.md
+  - BoiteDescription: src/BoiteDescription.md
+  - BoiteImage: src/BoiteImage.md
+  - BoiteSelection: src/BoiteSelection.md
+  - Bouton: src/Bouton.md
+  - ClavierBorneArcade: src/ClavierBorneArcade.md
+  - Graphique: src/Graphique.md
+  - Main: src/Main.md
+  - Pointeur: src/Pointeur.md
+- Développement:
+  - Ajouter un jeu: ajout_jeu.md
+  - Analyse IA des jeux: analyse_jeux.md
+- Jeux:
+  - ball-blast: jeux/presentation_ball-blast.md
+  - Columns: jeux/presentation_columns.md
+  - CursedWare: jeux/presentation_cursedware.md
+  - DinoRail: jeux/presentation_dinorail.md
+  - InitialDrift: jeux/presentation_initialdrift.md
+  - JavaSpace: jeux/presentation_javaspace.md
+  - Kowasu Renga: jeux/presentation_kowasu_renga.md
+  - Minesweeper: jeux/presentation_minesweeper.md
+  - OsuTile: jeux/presentation_osutile.md
+  - PianoTile: jeux/presentation_pianotile.md
+  - Pong: jeux/presentation_pong.md
+  - Puissance X: jeux/presentation_puissance_x.md
+  - Snake Eater: jeux/presentation_snake_eater.md
+  - TronGame: jeux/presentation_trongame.md
 theme:
   name: mkdocs
   language: fr
-
 plugins:
-  - search
-
+- search
 markdown_extensions:
-  - codehilite
-  - admonition
-  - toc:
-      permalink: true
+- codehilite
+- admonition
+- toc:
+    permalink: true
