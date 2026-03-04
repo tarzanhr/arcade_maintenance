@@ -163,9 +163,14 @@ def main():
         print(f"  Version installee: {python_version}")
         min_version = deps['languages']['python']['min_version']
         if compare_versions(python_version, min_version, '>='):
-            print(f"  [OK] Version >= {min_version}")
+            print(f"  [OK] Version >= {min_version} (games)")
         else:
-            print(f"  [AVERTISSEMENT] Version requise >= {min_version}")
+            print(f"  [AVERTISSEMENT] Version requise >= {min_version} (games)")
+        # Ollama and AI tools require Python 3.11+
+        if compare_versions(python_version, '3.11', '>='):
+            print(f"  [OK] Version >= 3.11 (AI/Ollama tools)")
+        else:
+            print(f"  [AVERTISSEMENT] Python 3.11+ required for AI tools (Ollama)")
     else:
         print("  [ERREUR] Python3 non installe")
 
