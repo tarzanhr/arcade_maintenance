@@ -44,6 +44,30 @@ else
     echo "Python $BORNE_PYTHON_VERSION déjà installé"
 fi
 
+# Vérifier si Python 3.13 est disponible et proposer l'installation
+PYTHON313_AVAILABLE=false
+if [ -f "$BORNE_ROOT/tools/install_python313.sh" ]; then
+    PYTHON313_AVAILABLE=true
+fi
+
+if [ "$PYTHON313_AVAILABLE" = true ]; then
+    # Vérifier si Python 3.13 est déjà installé
+    if command -v python3.13 &> /dev/null; then
+        echo "Python 3.13 déjà installé"
+    else
+        echo ""
+        echo "🐍 Python 3.13 est disponible pour une installation optimisée"
+        echo "Voulez-vous installer Python 3.13 (recommandé pour les scripts IA) ? [y/N]"
+        read -r response
+        if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+            echo "Installation de Python 3.13..."
+            sudo "$BORNE_ROOT/tools/install_python313.sh"
+        else
+            echo "Installation de Python 3.13 ignorée"
+        fi
+    fi
+fi
+
 if ! command -v pip3 &> /dev/null; then
     echo "Installation de pip..."
     sudo apt-get install -y -qq "$PYTHON_PIP"
