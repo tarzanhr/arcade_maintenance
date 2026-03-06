@@ -14,7 +14,7 @@ fi
 
 sudo apt-get update -qq
 
-sudo apt-get install -y -qq git xdotool xkb-data unclutter curl wget love
+sudo apt-get install -y -qq git xdotool xkb-data unclutter curl wget love python3-tk
 
 if is_modern_os; then
     JAVA_PKG="openjdk-17-jdk"
