@@ -8,7 +8,7 @@ cd "$BORNE_ROOT"
 STATUS_FILE="/tmp/arcade_status"
 echo "Chargement..." > "$STATUS_FILE"
 
-python3 "$BORNE_ROOT/tools/splash_screen.py" &
+python3.9 "$BORNE_ROOT/tools/splash_screen.py" &
 SPLASH_PID=$!
 
 echo "Nettoyage..." > "$STATUS_FILE"
