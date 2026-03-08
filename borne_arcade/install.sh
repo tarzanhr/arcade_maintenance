@@ -18,29 +18,26 @@ fi
 
 source ./tools/detect_environment.sh
 
-echo "[1/7] Installation dépendances..."
-./tools/install_dependencies.sh
-
-echo "[2/7] Vérification MG2D..."
+echo "[1/6] Vérification MG2D..."
 ./tools/verify_mg2d.sh
 
-echo "[3/7] Installation layout clavier..."
+echo "[2/6] Installation layout clavier..."
 ./tools/install_keyboard_layout.sh
 
-echo "[4/7] Compilation..."
+echo "[3/6] Compilation..."
 if [ -f ./compilation.sh ]; then
     ./compilation.sh
 else
     echo "compilation.sh non trouvé, ignoré"
 fi
 
-echo "[5/7] Configuration autostart..."
+echo "[4/6] Configuration autostart..."
 ./tools/setup_autostart.sh
 
-echo "[6/7] Configuration système..."
+echo "[5/6] Configuration système..."
 ./tools/configure_system.sh
 
-echo "[7/7] Installation git hooks..."
+echo "[6/6] Installation git hooks..."
 if [ -d .git ]; then
     cp tools/git-hooks/* .git/hooks/ 2>/dev/null || echo "Pas de git hooks"
     chmod +x .git/hooks/* 2>/dev/null || true
