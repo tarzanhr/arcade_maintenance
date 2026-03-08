@@ -24,10 +24,5 @@ rm -f "$STATUS_FILE"
 java -cp "bin:$JAVA_CP" Main
 
 # Extinction de la borne après l'avoir quitté
-#for i in {30..1}
-#do
-#    echo Extinction de la borne dans $i secondes
-#    sleep 1
-#done
-
-#sudo halt
+python3 "$BORNE_ROOT/tools/shutdown_screen.py"
+sudo halt
