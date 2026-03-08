@@ -1,45 +1,64 @@
 #!/usr/bin/env python3
 """Splash screen displayed during arcade cabinet startup."""
 
-import tkinter as tk
 import sys
 import os
 
+try:
+    import pygame
+except ImportError:
+    sys.exit(0)
+
+STATUS_FILE = "/tmp/arcade_status"
+
 
 def main():
-    root = tk.Tk()
-    root.title("IUT Arcade")
-    root.configure(bg="white")
-    root.attributes("-fullscreen", True)
-    root.attributes("-topmost", True)
+    pygame.init()
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    pygame.display.set_caption("IUT Arcade")
+    pygame.mouse.set_visible(False)
 
-    frame = tk.Frame(root, bg="white")
-    frame.place(relx=0.5, rely=0.5, anchor="center")
+    WHITE = (255, 255, 255)
+    BLACK = (0, 0, 0)
+    GREY = (85, 85, 85)
 
-    tk.Label(frame, text="IUT Arcade", font=("Helvetica", 48, "bold"), bg="white", fg="black").pack(pady=20)
+    width, height = screen.get_size()
 
-    status_var = tk.StringVar(value="Chargement...")
-    tk.Label(frame, textvariable=status_var, font=("Helvetica", 20), bg="white", fg="#555555").pack(pady=10)
+    font_title = pygame.font.SysFont("helvetica", 72, bold=True)
+    font_status = pygame.font.SysFont("helvetica", 32)
 
-    # Read status updates from a temp file written by lancerBorne.sh
-    status_file = "/tmp/arcade_status"
+    clock = pygame.time.Clock()
 
-    def poll_status():
-        if os.path.exists(status_file):
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit(0)
+
+        status = "Chargement..."
+        if os.path.exists(STATUS_FILE):
             try:
-                with open(status_file) as f:
+                with open(STATUS_FILE) as f:
                     msg = f.read().strip()
                 if msg == "READY":
-                    root.destroy()
-                    return
+                    break
                 if msg:
-                    status_var.set(msg)
+                    status = msg
             except OSError:
                 pass
-        root.after(500, poll_status)
 
-    root.after(500, poll_status)
-    root.mainloop()
+        screen.fill(WHITE)
+
+        title = font_title.render("IUT Arcade", True, BLACK)
+        screen.blit(title, (width // 2 - title.get_width() // 2, height // 2 - 60))
+
+        status_text = font_status.render(status, True, GREY)
+        screen.blit(status_text, (width // 2 - status_text.get_width() // 2, height // 2 + 40))
+
+        pygame.display.flip()
+        clock.tick(10)
+
+    pygame.quit()
 
 
 if __name__ == "__main__":
